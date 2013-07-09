@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 
-// Detecting Active Variables
+// Detecting Active Variables incase we need them for anything
 $option   = $app->input->getCmd('option', '');
 $view     = $app->input->getCmd('view', '');
 $layout   = $app->input->getCmd('layout', '');
@@ -25,7 +25,7 @@ if ($hideHome && $menu->getActive() == $menu->getDefault( $lang->getTag() )) {
 	$removeComponent = 1;
 }
 
-
+// TODO - removal has stoped working, like it's being called in the articles later on
 if ($removeMootools == 1) {
 	unset($doc->_scripts[JURI::root(true) . '/media/system/js/mootools-core.js']);
 }

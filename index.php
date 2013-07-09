@@ -47,16 +47,14 @@ if ((JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::
 } ?>
 <jdoc:include type="head" />
 </head>
-<body>
+<body class="csstype">
 	<!--start demo-->
 	<div class="content pure-g-r"> <!--content-->
 		<header class="header pure-u-1">
 			<?php if ($this->countModules('menu')) : ?>
-			<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-				<a href="<?php echo $this->baseurl; ?>" title="<?php echo $sitename; ?>"><span class="brand-title" <?php if ($waiAriaRoles) echo 'role="banner"'; ?>><?php echo $sitename; ?></span></a>
-				<nav class="nav" <?php if ($waiAriaRoles) echo 'role="navigation"'; ?>>
-					<jdoc:include type="modules" name="menu" style="pureseo" />
-				</nav>
+			<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal" <?php if ($waiAriaRoles) echo 'role="navigation"'; ?>>
+				<a href="<?php echo $this->baseurl; ?>" title="<?php echo $sitename; ?>" class="brand-link"><span class="brand-title" <?php if ($waiAriaRoles) echo 'role="banner"'; ?>><?php echo $sitename; ?></span></a>
+				<jdoc:include type="modules" name="menu" style="pureseo" />
 			</div>
 		<?php endif; ?>
 	</header>
@@ -68,14 +66,21 @@ if ((JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::
 	</div>
 <?php endif; ?>
 <div class="content pure-u-1"> <!--main wrap-->
-	<div class="pure-g-r content-ribbon" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
-		<jdoc:include type="message" />
-		<?php if ($removeComponent != 1) : ?>
-		<jdoc:include type="component" />
-	<?php endif; ?>
+	<?php if ($this->countModules('breadcrumbs')) : ?>
+	<div class="breadcrumbs pure-g-r">
+		<jdoc:include type="modules" name="breadcrumbs" style="puredefault" />
+	</div>
+<?php endif; ?>
+<div class="main pure-g-r content-ribbon" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
+	<jdoc:include type="message" />
+	<?php if ($removeComponent != 1) : ?>
+	<jdoc:include type="component" />
+<?php endif; ?>
 </div>
 <?php if ($this->countModules('bottom')) : ?>
-	<jdoc:include type="modules" name="bottom" style="puredefault" />
+	<div class="bottom pure-g-r">
+		<jdoc:include type="modules" name="bottom" style="puredefault" />
+	</div>
 <?php endif; ?>
 </div> <!--end main wrap-->
 <?php if ($this->countModules('footer')) : ?>

@@ -74,7 +74,7 @@ if ($openGraph) {
 			if (preg_match("|https?://(www\.)?twitter\.com/(#!/)?@?([^/]*)|", $contactParams['linka'], $matches)) {
 				$twittercreator = $matches[3];
 			} elseif (preg_match("|https?://(www\.)?twitter\.com/(#!/)?@?([^/]*)|", $contactParams['linkb'], $matches)) {
-				$twittercreator = '@'.$matches[3];
+				$twittercreator = $matches[3];
 			} elseif (preg_match("|https?://(www\.)?twitter\.com/(#!/)?@?([^/]*)|", $contactParams['linkc'], $matches)) {
 				$twittercreator = $matches[3];
 			} elseif (preg_match("|https?://(www\.)?twitter\.com/(#!/)?@?([^/]*)|", $contactParams['linkd'], $matches)) {

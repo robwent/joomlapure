@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension version="3.1" type="template" client="site">
+<extension version="3.1" type="template" client="site" method="upgrade">
 <name>joomlapure</name>
 <version>1.0</version>
 <creationDate>22/06/2013</creationDate>
@@ -28,6 +28,7 @@
 <positions>
 <position>menu</position>
 <position>splash</position>
+<position>breadcrumbs</position>
 <position>bottom</position>
 <position>footer</position>
 <position>debug</position>
@@ -248,7 +249,7 @@ description="TPL_JOOMLAPURE_PRINTCSS_DESC" >
 <field name="modBase"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODBASE_LABEL"
 description="TPL_JOOMLAPURE_MODBASE_DESC" >
 <option value="0">JNO</option>
@@ -257,7 +258,7 @@ description="TPL_JOOMLAPURE_MODBASE_DESC" >
 <field name="modButtons"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODBUT_LABEL"
 description="TPL_JOOMLAPURE_MODBUT_DESC" >
 <option value="0">JNO</option>
@@ -266,7 +267,7 @@ description="TPL_JOOMLAPURE_MODBUT_DESC" >
 <field name="modFormsR"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODFORMR_LABEL"
 description="TPL_JOOMLAPURE_MODFORMR_DESC" >
 <option value="0">JNO</option>
@@ -275,7 +276,7 @@ description="TPL_JOOMLAPURE_MODFORMR_DESC" >
 <field name="modFormsNR"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODFORMNR_LABEL"
 description="TPL_JOOMLAPURE_MODFORMNR_DESC" >
 <option value="0">JNO</option>
@@ -284,7 +285,7 @@ description="TPL_JOOMLAPURE_MODFORMNR_DESC" >
 <field name="modGridsR"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODGRIDR_LABEL"
 description="TPL_JOOMLAPURE_MODGRIDR_DESC" >
 <option value="0">JNO</option>
@@ -293,7 +294,7 @@ description="TPL_JOOMLAPURE_MODGRIDR_DESC" >
 <field name="modGridsNR"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODGRIDNR_LABEL"
 description="TPL_JOOMLAPURE_MODGRIDNR_DESC" >
 <option value="0">JNO</option>
@@ -302,7 +303,7 @@ description="TPL_JOOMLAPURE_MODGRIDNR_DESC" >
 <field name="modMenusR"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODMENR_LABEL"
 description="TPL_JOOMLAPURE_MODMENR_DESC" >
 <option value="0">JNO</option>
@@ -311,7 +312,7 @@ description="TPL_JOOMLAPURE_MODMENR_DESC" >
 <field name="modMenusNR"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODMENNR_LABEL"
 description="TPL_JOOMLAPURE_MODMENNR_DESC" >
 <option value="0">JNO</option>
@@ -320,7 +321,7 @@ description="TPL_JOOMLAPURE_MODMENNR_DESC" >
 <field name="modTables"
 type="radio"
 class="btn-group"
-default="0"
+default="1"
 label="TPL_JOOMLAPURE_MODTAB_LABEL"
 description="TPL_JOOMLAPURE_MODTAB_DESC" >
 <option value="0">JNO</option>
@@ -597,7 +598,7 @@ description="TPL_JOOMLAPURE_IMAGEQUALITY_DESC" />
 <field name="canvasColor"
 type="text"
 class=""
-default="transparent"
+default=""
 label="TPL_JOOMLAPURE_IMAGECANVASCOLOR_LABEL"
 description="TPL_JOOMLAPURE_IMAGECANVASCOLOR_DESC" />
 <field name="imageCacheTime"

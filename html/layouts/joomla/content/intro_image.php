@@ -29,6 +29,7 @@ if ($imageResizeTeaser && !class_exists('resize')) {
 			if ($imageHeightTeaser) {$settings['h'] = $imageHeightTeaser;}
 			if ($imageCropTeaser == 1) {$settings['crop'] = 'true';}
 			if ($imageScaleTeaser == 1) {$settings['scale'] = 'true';}
+			if ($canvasColor) {$settings['canvas-color'] = $canvasColor;}
 			if ($imageUseFeatured) {
 				$original = $images->image_fulltext;
 				$images->image_intro = resize($images->image_fulltext,$settings);

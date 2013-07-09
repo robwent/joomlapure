@@ -88,7 +88,7 @@ if (!$removeCaption) {
 || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author')); ?>
 <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
 	<footer class="article-info muted">
-		<ul class="article-info">
+		<ul class="article-info list plain">
 			<li class="article-info-term"><?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></li>
 
 			<?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
@@ -200,7 +200,23 @@ if (!$removeCaption) {
 		echo 'class="caption"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';
 		endif; ?>
 		<?php if ($imageResizeMain) {
-			$settings = array('w'=>$imageWidthMain,'h'=>$imageHeightMain);
+			$settings = array();
+			if ($imageWidthMain) {
+				$settings['w'] = $imageWidthMain;
+			}
+			if ($imageHeightMain) {
+				$settings['h'] = $imageHeightMain;
+			}
+			if ($imageScaleMain) {
+				$settings['scale'] = 1;
+			}
+			if ($imageCropMain) {
+				$settings['crop'] = 1;
+			}
+			if ($canvasColor) {
+				$settings['canvas-color'] = $canvasColor;
+			}
+			//$settings = array('w'=>$imageWidthMain,'h'=>$imageHeightMain);
 			$original = $images->image_fulltext;
 			$images->image_fulltext = resize($images->image_fulltext,$settings);
 		} ?>
@@ -223,7 +239,7 @@ endif; ?>
 
 <?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
 	<footer class="article-info muted" <?php if ($waiAriaRoles) echo 'role="contentinfo"'; ?>>
-		<ul class="article-info">
+		<ul class="article-info list plain">
 			<li class="article-info-term"><?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></li>
 
 			<?php if ($info == 1) : ?>

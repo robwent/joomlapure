@@ -29,6 +29,7 @@ if ($imageResizeMain && !class_exists('resize')) {
 			if ($imageHeightMain) {$settings['h'] = $imageHeightMain;}
 			if ($imageCropMain == 1) {$settings['crop'] = 'true';}
 			if ($imageScaleMain == 1) {$settings['scale'] = 'true';}
+			if ($canvasColor) {$settings['canvas-color'] = $canvasColor;}
 			$original = $images->image_fulltext;
 			$images->image_fulltext = resize($images->image_fulltext,$settings);
 		} ?>

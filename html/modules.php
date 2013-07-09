@@ -32,14 +32,12 @@ function modChrome_puredefault($module, &$params, &$attribs)
 	} elseif (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $botRemove) {
 		return null;
 	} elseif ($module->content) { ?>
-	<div class="moduletable <?php echo $params->get('moduleclass_sfx'); ?>">
 		<?php if ($module->showtitle) : ?>
 		<div class="pure-module-title">
 			<<?php echo $headerTag; ?>><span><?php echo $module->title; ?></span></<?php echo $headerTag; ?>>
 		</div>
 	<?php endif; ?>
 	<?php echo $module->content; ?>
-</div>
 <?php
 }
 }
