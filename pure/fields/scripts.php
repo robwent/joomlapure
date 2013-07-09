@@ -20,7 +20,7 @@ class JFormFieldScripts extends JFormField
 		$template = $app->getTemplate();
 		$doc = JFactory::getDocument();
 		$root = JURI::root();
-		$template = 'pureseo'; //until I find a way to get the current theme in admin
+		$template = 'joomlapure'; //until I find a way to get the current theme in admin
 		$style = '#jform_params_loadCss {width:100%;min-height:40px;} #jform_params_test_field {min-width:250px;min-height:100px}'; //make the css box a bit bigger
 		$doc->addStyleDeclaration($style);
 		ob_start();
