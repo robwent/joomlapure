@@ -12,9 +12,6 @@ defined('_JEXEC') or die;
 $app = JFactory::getApplication();
 $template = $app->getTemplate();
 include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
-if ($imageResizeMain && !class_exists('resize')) {
-	include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'libs'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'function.resize.php');
-}
 ?>
 <?php $images = json_decode($displayData->images); ?>
 <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
@@ -30,8 +27,9 @@ if ($imageResizeMain && !class_exists('resize')) {
 			if ($imageCropMain == 1) {$settings['crop'] = 'true';}
 			if ($imageScaleMain == 1) {$settings['scale'] = 'true';}
 			if ($canvasColor) {$settings['canvas-color'] = $canvasColor;}
+			if ($imageResizeSmush) {$settings['smush'] = 1;}
 			$original = $images->image_fulltext;
-			$images->image_fulltext = resize($images->image_fulltext,$settings);
+			$images->image_fulltext = JoomlaPure::resize($images->image_fulltext,$settings);
 		} ?>
 		src="<?php if ($cdnUrl && $cdnFeaturedImages) {echo $cdnUrl.'/'.ltrim(htmlspecialchars($images->image_fulltext), '/');} else echo htmlspecialchars($images->image_fulltext); ?>" <?php if ($imageResizeMain && $original) echo 'data-original="'.$original.'"'; ?> alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/> </div>
 		<?php echo 'main:'.$imageResizeMain; ?>

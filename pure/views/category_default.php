@@ -26,8 +26,8 @@ if (isset($images->image_fulltext) && !empty($images->image_fulltext)) {
 	$ogImage = JURI::base().$images->image_fulltext;
 } else {
 	//preg_match('/src=[\\"\']([-0-9A-Za-z\/_\:\.]*.(jpg|png|gif|jpeg))/i', $this->item->introtext, $image);
-	if (getImages($this->item->introtext) === true) {
-		$introImages = getImages($this->item->introtext);
+	if (JoomlaPure::getImages($this->item->introtext) === true) {
+		$introImages = JoomlaPure::getImages($this->item->introtext);
 		if (substr($introImages[1][0], 0, 4) != 'http') {
 			$introImages[1][0] = JURI::base().$introImages[1][0];
 		}
@@ -92,7 +92,7 @@ if ($openGraph) {
 		}
 
 		if ($defaultTCard == 'gallery') {
-			$introImages = getImages($this->item->introtext);
+			$introImages = JoomlaPure::getImages($this->item->introtext);
 			if (count($introImages[1]) >=4) {
 				$doc->setMetaData( 'twitter:card', 'gallery' );
 				$doc->setMetaData( 'twitter:image0:src', substr($introImages[1][0], 0, 4) == 'http' ? $introImages[1][0] : JURI::base().$introImages[1][0] );
@@ -104,7 +104,7 @@ if ($openGraph) {
 			}
 		}
 		if ($defaultTCard == 'photo') {
-			$introImages = getImages($this->item->introtext);
+			$introImages = JoomlaPure::getImages($this->item->introtext);
 			if ($images->image_fulltext || $introImages[1][0] ) {
 				$doc->setMetaData( 'twitter:card', $defaultTCard );
 				if ($introImages[1][0]) {
@@ -177,13 +177,5 @@ if ($SocialCountCss) {
 	if ($SocialCountIcons) {
 		$doc->addStyleSheet($this->baseurl.'/templates/'.$app->getTemplate().'/pure/libs/socialcount/socialcount-icons.css');
 	}
-}
-function getImages($content){ //Check for images
-	$images = array();
-	preg_match_all('/src=[\\"\']([-0-9A-Za-z\/_\:\.]*.(jpg|png|gif|jpeg))/i', $content, $images);
-	if (array_key_exists(1, $images)) {
-		return  $images;
-	}
-	return false;
 }
 ?>

@@ -13,10 +13,6 @@ defined('_JEXEC') or die;
 $app = JFactory::getApplication();
 $template = $app->getTemplate();
 include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
-// Include the resize script if needed
-if ($imageResizeMain) {
-	require_once (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'libs'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'function.resize.php');
-}
 // Include the specific include
 include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'category_blog_item.php');
 

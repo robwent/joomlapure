@@ -13,7 +13,7 @@ $languagetag = $lang->getTag();
 $languageCode = $languages[ $lang->getTag() ]->sef;
 // Start SEO Extras
 $doc = JFactory::getDocument();
-$app = JFactory::getApplication();
+$template = JFactory::getApplication()->getTemplate();
 // Get the meta description or introtext if meta is empty
 if ($this->item->metadesc != null) {
 	$description = preg_replace('/\s+?(\S+)?$/', '', substr($this->item->metadesc, 0, $descriptionMax));
@@ -25,8 +25,8 @@ if (isset($images->image_fulltext) && !empty($images->image_fulltext)) {
 	$ogImage = JURI::base().$images->image_fulltext;
 } else {
 	//preg_match('/src=[\\"\']([-0-9A-Za-z\/_\:\.]*.(jpg|png|gif|jpeg))/i', $this->item->introtext, $image);
-	if (getImages($this->item->introtext) === true) {
-		$introImages = getImages($this->item->introtext);
+	if (JoomlaPure::getImages($this->item->introtext) === true) {
+		$introImages = JoomlaPure::getImages($this->item->introtext);
 		if (substr($introImages[1][0], 0, 4) != 'http') {
 			$introImages[1][0] = JURI::base().$introImages[1][0];
 		}
@@ -91,7 +91,7 @@ if ($openGraph) {
 		}
 
 		if ($defaultTCard == 'gallery') {
-			$introImages = getImages($this->item->introtext);
+			$introImages = JoomlaPure::getImages($this->item->introtext);
 			if (count($introImages[1]) >=4) {
 				$doc->setMetaData( 'twitter:card', 'gallery' );
 				$doc->setMetaData( 'twitter:image0:src', substr($introImages[1][0], 0, 4) == 'http' ? $introImages[1][0] : JURI::base().$introImages[1][0] );
@@ -103,7 +103,7 @@ if ($openGraph) {
 			}
 		}
 		if ($defaultTCard == 'photo') {
-			$introImages = getImages($this->item->introtext);
+			$introImages = JoomlaPure::getImages($this->item->introtext);
 			if ($images->image_fulltext || $introImages[1][0] ) {
 				$doc->setMetaData( 'twitter:card', $defaultTCard );
 				if ($introImages[1][0]) {
@@ -135,6 +135,7 @@ if ($relAuthor) {
 	$query = 'SELECT `webpage` FROM `#__contact_details` WHERE `id` = '. (int) $this->item->contactid;
 	$db->setQuery($query);
 	$plus = $db->loadResult();
+	$googlePage = null;
 	if (strpos($plus, 'plus.google.com')) {
 		$googlePage = $plus.'?rel=author';
 	} else {
@@ -168,16 +169,16 @@ if ($relAuthor) {
 }
 
 // SocialCount stuff
-if (!(JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $mobileRemoveBotJs)) {
+if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	if ($SocialCountJs) {
-		$doc->addScript($this->baseurl.'/templates/'.$app->getTemplate().'/pure/libs/socialcount/socialcount.js');
+		$doc->addScript($this->baseurl.'/templates/'.$template.'/pure/libs/socialcount/socialcount.js');
 	}
 }
-if (!(JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $mobileRemoveBotCss)) {
+if (!(JoomlaPure::isBot() && $mobileRemoveBotCss)) {
 	if ($SocialCountCss) {
-		$doc->addStyleSheet($this->baseurl.'/templates/'.$app->getTemplate().'/pure/libs/socialcount/socialcount.css');
+		$doc->addStyleSheet($this->baseurl.'/templates/'.$template.'/pure/libs/socialcount/socialcount.css');
 		if ($SocialCountIcons) {
-			$doc->addStyleSheet($this->baseurl.'/templates/'.$app->getTemplate().'/pure/libs/socialcount/socialcount-icons.css');
+			$doc->addStyleSheet($this->baseurl.'/templates/'.$template.'/pure/libs/socialcount/socialcount-icons.css');
 		}
 	}
 }
@@ -192,11 +193,10 @@ if (($cdnUrl && $cdnContentImages) || $imageResizeContent) {
 			$newSrc = '';
 			// Resize if selected and image has width and height attributes
 			if ($imageResizeContent && $item->getAttribute('width') && $item->getAttribute('height')) {
-				include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'libs'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'function.resize.php');
 				$width = rtrim($item->getAttribute('width'), 'px');
 				$height = rtrim($item->getAttribute('height'), 'px');
-				$settings = array('w'=>$width,'h'=>$height);
-				$newSrc = resize($item->getAttribute('src'),$settings);
+				$settings = array('w'=>$width,'h'=>$height, 'smush'=>$imageResizeSmush);
+				$newSrc = JoomlaPure::resize($item->getAttribute('src'),$settings);
 			}
 			// Add cdn if selected
 			if ($cdnUrl && $cdnContentImages) {
@@ -214,14 +214,5 @@ if (($cdnUrl && $cdnContentImages) || $imageResizeContent) {
 		}
 	}
 	$this->item->text = preg_replace('~<(?:!DOCTYPE|/?(?:html|body))[^>]*>\s*~i', '', $dom->saveHTML());
-}
-
-function getImages($content){ //Check for images
-	$images = array();
-	preg_match_all('/src=[\\"\']([-0-9A-Za-z\/_\:\.]*.(jpg|png|gif|jpeg))/i', $content, $images);
-	if (array_key_exists(1, $images)) {
-		return  $images;
-	}
-	return false;
 }
 ?>

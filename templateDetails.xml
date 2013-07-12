@@ -584,28 +584,28 @@ description="TPL_JOOMLAPURE_SCGP_DESC" >
 </fieldset>
 <fieldset name="images" label="TPL_JOOMLAPURE_IMAGES_FIELDSET_LABEL">
 <!--<field name="imagecheckelement" type="imagecheck" label="" description="" /> checks for imagemagick-->
-<field name="pathConvert"
+<!--<field name="pathConvert"
 type="text"
 class=""
 default="/usr/bin/convert"
 label="TPL_JOOMLAPURE_PATHCONVERT_LABEL"
-description="TPL_JOOMLAPURE_PATHCONVERT_DESC" />
-<field name="imageQuality"
+description="TPL_JOOMLAPURE_PATHCONVERT_DESC" />-->
+<!--<field name="imageQuality"
 type="text"
 class=""
 default="80"
 label="TPL_JOOMLAPURE_IMAGEQUALITY_LABEL"
-description="TPL_JOOMLAPURE_IMAGEQUALITY_DESC" />
-<field name="canvasColor"
+description="TPL_JOOMLAPURE_IMAGEQUALITY_DESC" />-->
+<!--<field name="canvasColor"
 type="text"
 class=""
 default=""
 label="TPL_JOOMLAPURE_IMAGECANVASCOLOR_LABEL"
-description="TPL_JOOMLAPURE_IMAGECANVASCOLOR_DESC" />
+description="TPL_JOOMLAPURE_IMAGECANVASCOLOR_DESC" />-->
 <field name="imageCacheTime"
 type="text"
 class=""
-default="1440"
+default="0"
 label="TPL_JOOMLAPURE_IMAGECACHETIME_LABEL"
 description="TPL_JOOMLAPURE_IMAGECACHETIME_DESC" />
 <field name="imageUseFeatured"

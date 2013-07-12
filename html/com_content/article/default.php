@@ -17,10 +17,6 @@ $urls    = json_decode($this->item->urls);
 $user    = JFactory::getUser();
 
 include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
-// Include the resize script if needed
-if ($imageResizeMain && !class_exists('resize')) {
-	include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'libs'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'function.resize.php');
-}
 // Include the specific include
 include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'article_default.php');
 
@@ -213,12 +209,15 @@ if (!$removeCaption) {
 			if ($imageCropMain) {
 				$settings['crop'] = 1;
 			}
+			if ($imageResizeSmush) {
+				$settings['smush'] = 1;
+			}
 			if ($canvasColor) {
 				$settings['canvas-color'] = $canvasColor;
 			}
 			//$settings = array('w'=>$imageWidthMain,'h'=>$imageHeightMain);
 			$original = $images->image_fulltext;
-			$images->image_fulltext = resize($images->image_fulltext,$settings);
+			$images->image_fulltext = JoomlaPure::resize($images->image_fulltext,$settings);
 		} ?>
 		src="<?php if ($cdnUrl && $cdnFeaturedImages) {echo $cdnUrl.'/'.ltrim(htmlspecialchars($images->image_fulltext), '/');} else echo htmlspecialchars($images->image_fulltext);  ?>" <?php if ($microdata = 1 && $microPublishing = 1)  echo 'itemprop="image"'; ?> <?php if($imageResizeMain && $original) echo 'data-original="'.htmlspecialchars($original).'"'; ?> alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
 	</figure>
@@ -367,7 +366,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 ?>
 <?php endif; ?>
 <?php echo $this->item->event->afterDisplayContent; ?> </div>
-<?php if (!(JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isMobile() && !MobileDetector::isTablet() && $mobileRemoveComments)) {
+<?php if (!(JoomlaPure::isMobile() && !JoomlaPure::isTablet() && $mobileRemoveComments)) {
 	if($commentCode) {echo $commentCode;}
 }
 ?>

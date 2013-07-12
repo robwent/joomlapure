@@ -140,14 +140,14 @@ $cdnContentImages = $params->get('cdnContentImages', 0);
 
 /*
 * Mobile detect tags
-*MobileDetector::isMobile()
-*MobileDetector::getUserAgent()
-*MobileDetector::getPhoneDevices()
-*MobileDetector::getTabletDevices();
-*MobileDetector::isTablet($userAgent = null, $httpHeaders = null)
-*MobileDetector::is($key, $userAgent = null, $httpHeaders = null)
-*MobileDetector::getOperatingSystems()
-*MobileDetector::isBot()
+*JoomlaPure::isMobile()
+*JoomlaPure::getUserAgent()
+*JoomlaPure::getPhoneDevices()
+*JoomlaPure::getTabletDevices();
+*JoomlaPure::isTablet($userAgent = null, $httpHeaders = null)
+*JoomlaPure::is($key, $userAgent = null, $httpHeaders = null)
+*JoomlaPure::getOperatingSystems()
+*JoomlaPure::isBot()
 */
 
 

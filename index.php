@@ -15,6 +15,7 @@ $params = $app->getTemplate(true)->params;
 $this->language = $doc->language;
 $this->direction = $doc->direction;
 $template = $app->getTemplate();
+
 // Move all the guff somewhere else
 include ('pure'.DIRECTORY_SEPARATOR.'config.php');
 include ('pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'main_index_include.php');
@@ -27,11 +28,11 @@ include ('pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'main_index_incl
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width">
 	<?php
-	if (!(JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $mobileRemoveBotCss)) {
-		if (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isMobile() && !MobileDetector::isTablet() && $mobileMobileCss) {
+	if (!(JoomlaPure::isBot() && $mobileRemoveBotCss)) {
+		if (JoomlaPure::isMobile() && !JoomlaPure::isTablet() && $mobileMobileCss) {
 		// Mobiledetect installed/enabled/selected, is a mobile -> load mobile.css ?>
 		<link rel="stylesheet" href="/pure-seo/templates/<?php echo $template; ?>/css/mobile.css" type="text/css" />
-		<?php } elseif (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isTablet() && $mobileTabletCss) {
+		<?php } elseif (JoomlaPure::isTablet() && $mobileTabletCss) {
 		// Mobiledetect installed/enabled/selected, is a tablet -> load tablet.css ?>
 		<link rel="stylesheet" href="/pure-seo/templates/<?php echo $template; ?>/css/tablet.css" type="text/css" />
 		<?php } else {
@@ -39,7 +40,7 @@ include ('pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'main_index_incl
 	}
 }
 	 // Add jQuery if set to load in the head
-if ((JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $mobileRemoveBotJs)) {
+if (JoomlaPure::isBot() && $mobileRemoveBotJs) {
 	if ($addJquery == 'top' && $jqueryVersion) : ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/jquery-1.8.3.min.js"><\/script>')</script>
@@ -93,7 +94,7 @@ if ((JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::
 
 
 <?php
-if (!(JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $mobileRemoveBotJs)) {
+if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	if ($addJquery == 'bottom' && $jqueryVersion) : ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/jquery-1.8.3.min.js"><\/script>')</script>
@@ -128,7 +129,7 @@ if ($this->params->get('analyticsCode') || ($this->params->get('googleFont') && 
 	</script>
 <?php endif;
 }
-if (!(JPluginHelper::isEnabled('system', 'pure_mobiledetect') && (MobileDetector::isBot() || MobileDetector::isMobile() || MobileDetector::isTablet()) )) {?>
+if (!(JoomlaPure::isBot() || JoomlaPure::isMobile() || JoomlaPure::isTablet() )) {?>
 <jdoc:include type="modules" name="debug" style="none" />
 <?php } ?>
 </body>

@@ -23,13 +23,13 @@ function modChrome_puredefault($module, &$params, &$attribs)
 	$botRemove = preg_match ('/bot-remove/', $params->get('moduleclass_sfx'))?1:0;
 	$headerTag = $params->get('header_tag');
 	$headerTag = isset($headerTag) ? $headerTag : 'h3';
-	if (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isMobile() && !MobileDetector::isTablet() && $mobileRemove) {
+	if (JoomlaPure::isMobile() && !JoomlaPure::isTablet() && $mobileRemove) {
 		return null;
-	} elseif (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isTablet() && $tabletRemove) {
+	} elseif (JoomlaPure::isTablet() && $tabletRemove) {
 		return null;
-	} elseif (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && !MobileDetector::ismobile() && $desktopRemove) {
+	} elseif (!JoomlaPure::ismobile() && $desktopRemove) {
 		return null;
-	} elseif (JPluginHelper::isEnabled('system', 'pure_mobiledetect') && MobileDetector::isBot() && $botRemove) {
+	} elseif (JoomlaPure::isBot() && $botRemove) {
 		return null;
 	} elseif ($module->content) { ?>
 		<?php if ($module->showtitle) : ?>
