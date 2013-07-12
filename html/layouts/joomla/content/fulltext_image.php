@@ -28,6 +28,7 @@ include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$templat
 			if ($imageScaleMain == 1) {$settings['scale'] = 'true';}
 			if ($canvasColor) {$settings['canvas-color'] = $canvasColor;}
 			if ($imageResizeSmush) {$settings['smush'] = 1;}
+			if ($imageCacheTime) {$settings['cache_http_minutes'] = $imageCacheTime;}
 			$original = $images->image_fulltext;
 			$images->image_fulltext = JoomlaPure::resize($images->image_fulltext,$settings);
 		} ?>

@@ -215,6 +215,9 @@ if (!$removeCaption) {
 			if ($canvasColor) {
 				$settings['canvas-color'] = $canvasColor;
 			}
+			if ($imageCacheTime) {
+				$settings['cache_http_minutes'] = $imageCacheTime;
+			}
 			//$settings = array('w'=>$imageWidthMain,'h'=>$imageHeightMain);
 			$original = $images->image_fulltext;
 			$images->image_fulltext = JoomlaPure::resize($images->image_fulltext,$settings);
