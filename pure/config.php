@@ -138,6 +138,10 @@ $cdnJavascript = $params->get('cdnJavascript', 0);
 $cdnFeaturedImages = $params->get('cdnFeaturedImages', 0);
 $cdnContentImages = $params->get('cdnContentImages', 0);
 
+$content404 = $params->get('content404');
+$email404 = $params->get('email404', 0);
+$email404recipient = $params->get('email404recipient');
+
 /*
 * Mobile detect tags
 *JoomlaPure::isMobile()

@@ -42,8 +42,7 @@ include ('pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'main_index_incl
 	 // Add jQuery if set to load in the head
 if (JoomlaPure::isBot() && $mobileRemoveBotJs) {
 	if ($addJquery == 'top' && $jqueryVersion) : ?>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/jquery-1.8.3.min.js"><\/script>')</script>
+	<script defer src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
 <?php endif;
 } ?>
 <jdoc:include type="head" />
@@ -96,21 +95,20 @@ if (JoomlaPure::isBot() && $mobileRemoveBotJs) {
 <?php
 if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	if ($addJquery == 'bottom' && $jqueryVersion) : ?>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/jquery-1.8.3.min.js"><\/script>')</script>
+	<script defer src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
 	<?php endif;
 	if ($addPlugins) {
 		if ($cdnUrl && $cdnJavascript) { ?>
-		<script src="<?php echo $cdnUrl ?>/templates/<?php echo $template; ?>/js/plugins.js"></script>
+		<script defer src="<?php echo $cdnUrl ?>/templates/<?php echo $template; ?>/js/plugins.js"></script>
 		<?php } else { ?>
-		<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/plugins.js"></script>
+		<script defer src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/plugins.js"></script>
 		<?php }
 	};
 	if ($addScripts) {
 		if ($cdnUrl && $cdnJavascript) { ?>
-		<script src="<?php echo $cdnUrl ?>/templates/<?php echo $template; ?>/js/scripts.js"></script>
+		<script defer src="<?php echo $cdnUrl ?>/templates/<?php echo $template; ?>/js/scripts.js"></script>
 		<?php } else { ?>
-		<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/scripts.js"></script>
+		<script defer src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/scripts.js"></script>
 		<?php }
 	};
 	if ($this->params->get('analyticsCode') || ($this->params->get('googleFont') && $this->params->get('googleFontLoader'))) : ?>

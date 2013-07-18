@@ -25,31 +25,30 @@ $task     = $app->input->getCmd('task', '');
 $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = $app->getCfg('sitename');
 
-if($task == "edit" || $layout == "form" )
-{
-	$fullWidth = 1;
-}
-else
-{
-	$fullWidth = 0;
+
+include ('pure'.DIRECTORY_SEPARATOR.'config.php');
+
+// Check for a referer and if so send mail
+if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient){
+	// Mail Settings
+	$mailer = JFactory::getMailer();
+// Set sender as site default
+	$config = JFactory::getConfig();
+	$sender = array( 
+		$config->get('config.mailfrom'),
+		$config->get('config.fromname') );
+	$mailer->setSender($sender);
+// Set recipient
+	$recipient = trim($email404recipient);
+	$mailer->addRecipient($recipient);
+// Mail body
+	$body   = JText::_('TPL_JOOMLAPURE_404_PAGE_ALERT_FOR')." ".$sitename."\n\n".JText::_('TPL_JOOMLAPURE_THE_USER_WAS_REFERED_FROM')." ".$_SERVER["HTTP_REFERER"]." \n\n".JText::_('TPL_JOOMLAPURE_THEY_WERE_TRYING_TO_REACH')." ".JURI::base().ltrim($_SERVER['REQUEST_URI'], '/');
+	$subject = JText::_('TPL_JOOMLAPURE_404_MAIL_SUBJECT');
+	$mailer->setSubject($subject);
+	$mailer->setBody($body);
+	$send = $mailer->Send();
 }
 
-// Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
-
-// Add current user information
-$user = JFactory::getUser();
-
-
-// Logo file
-if ($params->get('logoFile'))
-{
-	$logo = JURI::root() . $params->get('logoFile');
-}
-else
-{
-	$logo = $this->baseurl . "/templates/" . $this->template . "/images/logo.png";
-}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -58,166 +57,49 @@ else
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="language" content="<?php echo $this->language; ?>" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/error.css" type="text/css" />
 
 	<?php
-		$debug = JFactory::getConfig()->get('debug_lang');
-		if ((defined('JDEBUG') && JDEBUG) || $debug)
-		{
-	?>
+	$debug = JFactory::getConfig()->get('debug_lang');
+	if ((defined('JDEBUG') && JDEBUG) || $debug)
+	{
+		?>
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/cms/css/debug.css" type="text/css" />
-	<?php
-		}
-	?>
-	<?php
-	// If Right-to-Left
-	if ($this->direction == 'rtl')
-	{
-	?>
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-rtl.css" type="text/css" />
-	<?php
-	}
-	// Use of Google Font
-	if ($params->get('googleFont'))
-	{
-	?>
-		<link href='http://fonts.googleapis.com/css?family=<?php echo $params->get('googleFontName');?>' rel='stylesheet' type='text/css'>
-	<?php
+		<?php
 	}
 	?>
 	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<?php
-	// Template color
-	if ($params->get('templateColor'))
-	{
-	?>
-	<style type="text/css">
-		body.site
-		{
-			border-top: 3px solid <?php echo $params->get('templateColor');?>;
-			background-color: <?php echo $params->get('templateBackgroundColor');?>
-		}
-		a
-		{
-			color: <?php echo $params->get('templateColor');?>;
-		}
-		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover
-		{
-			background: <?php echo $params->get('templateColor');?>;
-		}
-		.navbar-inner
-		{
-			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-		}
-	</style>
-	<?php
-	}
-	?>
-	<!--[if lt IE 9]>
-		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
-	<![endif]-->
+
 </head>
 
-<body class="site <?php echo $option
-	. ' view-' . $view
-	. ($layout ? ' layout-' . $layout : ' no-layout')
-	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
-?>">
+<body class="site">
+	<div class="content pure-g-r"> <!--content-->
+		<header class="header pure-u-1">
 
-	<!-- Body -->
-	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<!-- Header -->
-			<div class="header">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<img src="<?php echo $logo;?>" alt="<?php echo $sitename; ?>" />
-					</a>
-					<div class="header-search pull-right">
-						<?php
-						// Display position-0 modules
-						$this->searchmodules = JModuleHelper::getModules('position-0');
-						foreach ($this->searchmodules as $searchmodule)
-						{
-							$output = JModuleHelper::renderModule($searchmodule, array('style' => 'none'));
-							$params = new JRegistry;
-							$params->loadString($searchmodule->params);
-							echo $output;
-						}
-						?>
-					</div>
-				</div>
-			</div>
-			<div class="navigation">
-				<?php
-				// Display position-1 modules
-				$this->navmodules = JModuleHelper::getModules('position-1');
-				foreach ($this->navmodules as $navmodule)
-				{
-					$output = JModuleHelper::renderModule($navmodule, array('style' => 'none'));
-					$params = new JRegistry;
-					$params->loadString($navmodule->params);
-					echo $output;
+		</header>
+		<div class="content pure-u-1"> <!--main wrap-->
+			<div class="main pure-g-r content-ribbon" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
+				<?php echo $content404; ?>
+				<?php 
+				if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient && $send !== true) { //Let the visitor know if admin has been notified
+					echo JText::_('TPL_JOOMLAPURE_404_ERROR_SENDING_MAIL').' ' . $send->message;
+				} elseif (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient && $send === true) {
+					echo JText::_('TPL_JOOMLAPURE_404_ADMIN_IS_INFORMED');
 				}
 				?>
 			</div>
-			<!-- Banner -->
-			<div class="banner">
-				<jdoc:include type="modules" name="banner" style="xhtml" />
-			</div>
-			<div class="row-fluid">
-				<div id="content" class="span12">
-					<!-- Begin Content -->
-					<h1 class="page-header"><?php echo JText::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
-					<div class="well">
-						<div class="row-fluid">
-							<div class="span6">
-								<p><strong><?php echo JText::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></strong></p>
-								<p><?php echo JText::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></p>
-								<ul>
-									<li><?php echo JText::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
-									<li><?php echo JText::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
-									<li><?php echo JText::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
-									<li><?php echo JText::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
-								</ul>
-							</div>
-							<div class="span6">
-								<?php if (JModuleHelper::getModule('search')) : ?>
-									<p><strong><?php echo JText::_('JERROR_LAYOUT_SEARCH'); ?></strong></p>
-									<p><?php echo JText::_('JERROR_LAYOUT_SEARCH_PAGE'); ?></p>
-									<?php
-										$module = JModuleHelper::getModule('search');
-										echo JModuleHelper::renderModule($module);
-									?>
-								<?php endif; ?>
-								<p><?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
-								<p><a href="<?php echo $this->baseurl; ?>/index.php" class="btn"><i class="icon-home"></i> <?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
-							</div>
-						</div>
-						<hr />
-						<p><?php echo JText::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
-						<blockquote>
-							<span class="label label-inverse"><?php echo $this->error->getCode(); ?></span> <?php echo $this->error->getMessage();?>
-						</blockquote>
-					</div>
-					<!-- End Content -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Footer -->
-	<div class="footer">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<hr />
-			<jdoc:include type="modules" name="footer" style="none" />
-			<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?></a></p>
-			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
-		</div>
-	</div>
+			<?php
+			$this->searchmodules = JModuleHelper::getModules('404search');
+			foreach ($this->searchmodules as $searchmodule)
+			{
+				$output = JModuleHelper::renderModule($searchmodule, array('style' => 'puredefault'));
+				$params = new JRegistry;
+				$params->loadString($searchmodule->params);
+				echo $output;
+			}
+			?>
+		</div> <!--end main wrap-->
+	</div> <!--end content-->
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>

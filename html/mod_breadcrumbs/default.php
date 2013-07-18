@@ -13,7 +13,7 @@ $app = JFactory::getApplication();
 $template = $app->getTemplate();
 include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
 
-JHtml::_('bootstrap.tooltip');
+//JHtml::_('bootstrap.tooltip');
 
 ?>
 <nav>

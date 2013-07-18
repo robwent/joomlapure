@@ -9,6 +9,7 @@
 
 defined('_JEXEC') or die;
 
+$doc = JFactory::getDocument();
 // Detecting Active Variables incase we need them for anything
 $option   = $app->input->getCmd('option', '');
 $view     = $app->input->getCmd('view', '');

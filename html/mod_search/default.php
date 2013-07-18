@@ -8,6 +8,10 @@
  */
 
 defined('_JEXEC') or die;
+
+// Include the config file
+include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
+
 ?>
 <div class="search<?php echo $moduleclass_sfx ?>">
 	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline" <?php if ($waiAriaRoles) echo 'role="form"'; ?>>
