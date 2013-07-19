@@ -12,15 +12,15 @@ defined('_JEXEC') or die;
 // Include the seo config file
 $app = JFactory::getApplication();
 $template = $app->getTemplate();
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 // Include the specific include
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'category_blog_item.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'views'.DS.'category_blog_item.php');
 
 // Create a shortcut for params.
 $params = $this->item->params;
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 $canEdit = $this->item->params->get('access-edit');
-if (!$removeMootools) {
+if (!$removeBootstrapjs) {
 	JHtml::_('behavior.tooltip');
 }
 if (!$removeJquery) {

@@ -12,11 +12,11 @@ defined('_JEXEC') or die;
 // Include the seo config file
 $app = JFactory::getApplication();
 $template = $app->getTemplate();
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 
-if (!$removeMootools) {
+if (!$removeBootstrapjs) {
 	JHtml::_('behavior.tooltip');
 }
 if (!$removeJquery) {

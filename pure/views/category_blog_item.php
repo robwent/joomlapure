@@ -30,7 +30,7 @@ if (($cdnUrl && $cdnContentImages) || $imageResizeContent) {
 			if ($imageResizeContent && $item->getAttribute('width') && $item->getAttribute('height')) {
 				$width = rtrim($item->getAttribute('width'), 'px');
 				$height = rtrim($item->getAttribute('height'), 'px');
-				$settings = array('w'=>$width,'h'=>$height, 'smush'=>$imageResizeSmush);
+				$settings = array('w'=>$width,'h'=>$height, 'smush'=>$imageResizeSmush, 'quality'=>$imageQuality);
 				$newSrc = JoomlaPure::resize($item->getAttribute('src'),$settings);
 			}
 			// Add cdn if selected

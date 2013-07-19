@@ -16,9 +16,9 @@ $images  = json_decode($this->item->images);
 $urls    = json_decode($this->item->urls);
 $user    = JFactory::getUser();
 
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 // Include the specific include
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'article_default.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'views'.DS.'article_default.php');
 
 // Create shortcuts to some parameters.
 $params  = $this->item->params;

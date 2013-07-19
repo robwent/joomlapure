@@ -854,7 +854,7 @@ type="email"
 label="TPL_JOOMLAPURE_RECIPIENT404_LABEL"
 description="TPL_JOOMLAPURE_RECIPIENT404_DESC"
 />
-</fieldset>	
+</fieldset>
 </fields>
 </config>
 </extension>

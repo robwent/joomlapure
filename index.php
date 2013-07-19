@@ -17,8 +17,8 @@ $this->direction = $doc->direction;
 $template = $app->getTemplate();
 
 // Move all the guff somewhere else
-include ('pure'.DIRECTORY_SEPARATOR.'config.php');
-include ('pure'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'main_index_include.php');
+include ('pure'.DS.'config.php');
+include ('pure'.DS.'views'.DS.'main_index_include.php');
 
 ?>
 <!DOCTYPE html>

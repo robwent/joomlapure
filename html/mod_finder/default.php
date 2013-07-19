@@ -8,9 +8,12 @@
  */
 
 defined('_JEXEC') or die;
-
+if (!$removeJquery) {
 JHtml::_('behavior.framework');
+}
+if (!$removeBootstrapjs) {
 JHtml::_('bootstrap.tooltip');
+}
 JHtml::addIncludePath(JPATH_SITE . '/components/com_finder/helpers/html');
 
 // Load the smart search component language file.

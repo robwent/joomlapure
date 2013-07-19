@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 // Include the seo config file
 $app = JFactory::getApplication();
 $template = $app->getTemplate();
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'pure'.DIRECTORY_SEPARATOR.'config.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 ?>
 <?php $images = json_decode($displayData->images); ?>
 <?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
@@ -29,6 +29,7 @@ include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$templat
 			if ($canvasColor) {$settings['canvas-color'] = $canvasColor;}
 			if ($imageResizeSmush) {$settings['smush'] = 1;}
 			if ($imageCacheTime) {$settings['cache_http_minutes'] = $imageCacheTime;}
+			if ($imageQuality) {$settings['quality'] = $imageQuality;}
 			if ($imageUseFeatured) {
 				$original = $images->image_fulltext;
 				$images->image_intro = JoomlaPure::resize($images->image_fulltext,$settings);

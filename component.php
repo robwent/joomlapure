@@ -15,7 +15,7 @@ $this->language = $doc->language;
 $this->direction = $doc->direction;
 $template = $this->getTemplate();
 
-include (JPATH_BASE.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.$template.DIRECTORY_SEPARATOR.'includes'.DIRECTORY_SEPARATOR.'vars.php');
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'includes'.DS.'vars.php');
 
 ?>
 <!DOCTYPE html>
