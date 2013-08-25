@@ -78,15 +78,19 @@
 .pure-form input[type="tel"][disabled],
 .pure-form input[type="color"][disabled],
 .pure-form select[disabled],
-.pure-form textarea[disabled],
-.pure-form input[readonly],
-.pure-form select[readonly],
-.pure-form textarea[readonly] {
+.pure-form textarea[disabled] {
     cursor: not-allowed;
     background-color: #eaeded;
     color: #cad2d3;
-    border-color: transparent;
 }
+.pure-form input[readonly],
+.pure-form select[readonly],
+.pure-form textarea[readonly] {
+    background: #eee; /* menu hover bg color */
+    color: #777; /* menu text color */
+    border-color: #ccc;
+}
+
 .pure-form input:focus:invalid,
 .pure-form textarea:focus:invalid,
 .pure-form select:focus:invalid {
@@ -112,7 +116,6 @@
 }
 .pure-form label {
     margin: 0.5em 0 0.2em;
-    color: #999;
     font-size: 90%;
 }
 .pure-form fieldset {
@@ -148,6 +151,7 @@
 .pure-form-stacked label,
 .pure-form-stacked textarea {
     display: block;
+    margin: 0.25em 0;
 }
 
 .pure-form-aligned input,
@@ -178,9 +182,10 @@
 }
 
 /* Rounded Inputs */
+.pure-form input.pure-input-rounded,
 .pure-form .pure-input-rounded {
-    border-radius: 20px;
-    padding-left: 1em;
+    border-radius: 2em;
+    padding: 0.5em 1em;
 }
 
 /* Grouped Inputs */
