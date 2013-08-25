@@ -15,9 +15,9 @@
     <description>
 	<![CDATA[
 	<div align="center">
-		<div class="alert alert-success" style="background-color:#DFF0D8;border-color:#D6E9C6;color: #468847;padding: 1px 0;">
-				<h4>A title</h4>
-		<p>Some text</p>
+		<div class="alert alert-success" style="background-color:#DFF0D8;border-color:#D6E9C6;color: #468847;padding: 1px 0;"><img src="https://s3-eu-west-1.amazonaws.com/joomlapure/images/joomlapure.png" style="width:100%;hegight:auto" />
+				<h4>A fast, advanced social marketing template for Joomla 3.1.x</h4>
+		<p>Please take a look at the demo site for a <a target="_blank" href="http://www.joomlapure.com">feature overview</a>.</p>
 		</div>
      <style>table.adminform{width: 100%;}</style>
 	 </div>
