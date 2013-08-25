@@ -85,21 +85,21 @@ $SocialCountGoogle = $params->get('SocialCountGoogle', 0);
 $SocialCountText = $params->get('SocialCountText');
 if ($SocialCountSize == 'small') {
 	$SocialCountMarkup	= '<ul class="socialcount socialcount-small" data-url="'.$pageUrl.'" data-share-text="'.$SocialCountText.'">
-	<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u='.$pageUrl.'" title="Share on Facebook"><span class="social-icon icon-facebook"></span><span class="count">Like</span></a></li>
-	<li class="twitter"><a href="https://twitter.com/intent/tweet?text='.$pageUrl.'" title="Share on Twitter"><span class="social-icon icon-twitter"></span><span class="count">Tweet</span></a></li>
-	<li class="googleplus"><a href="https://plus.google.com/share?url='.$pageUrl.'" title="Share on Google Plus"><span class="social-icon icon-googleplus"></span><span class="count">+1</span></a></li>
+	<li class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$pageUrl.'" title="Share on Facebook"><span class="social-icon icon-facebook"></span><span class="count">Like</span></a></li>
+	<li class="twitter"><a target="_blank" href="https://twitter.com/intent/tweet?text='.$pageUrl.'" title="Share on Twitter"><span class="social-icon icon-twitter"></span><span class="count">Tweet</span></a></li>
+	<li class="googleplus"><a target="_blank" href="https://plus.google.com/share?url='.$pageUrl.'" title="Share on Google Plus"><span class="social-icon icon-googleplus"></span><span class="count">+1</span></a></li>
 </ul>';
 } elseif ($SocialCountSize == 'large') {
 	$SocialCountMarkup	= '<ul class="socialcount socialcount-large" data-url="'.$pageUrl.'" data-share-text="'.$SocialCountText.'">
-	<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u='.$pageUrl.'" title="Share on Facebook"><span class="social-icon icon-facebook"></span><span class="count">Like</span></a></li>
-	<li class="twitter"><a href="https://twitter.com/intent/tweet?text='.$pageUrl.'" title="Share on Twitter"><span class="social-icon icon-twitter"></span><span class="count">Tweet</span></a></li>
-	<li class="googleplus"><a href="https://plus.google.com/share?url='.$pageUrl.'" title="Share on Google Plus"><span class="social-icon icon-googleplus"></span><span class="count">+1</span></a></li>
+	<li class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$pageUrl.'" title="Share on Facebook"><span class="social-icon icon-facebook"></span><span class="count">Like</span></a></li>
+	<li class="twitter"><a target="_blank" href="https://twitter.com/intent/tweet?text='.$pageUrl.'" title="Share on Twitter"><span class="social-icon icon-twitter"></span><span class="count">Tweet</span></a></li>
+	<li class="googleplus"><a target="_blank" href="https://plus.google.com/share?url='.$pageUrl.'" title="Share on Google Plus"><span class="social-icon icon-googleplus"></span><span class="count">+1</span></a></li>
 </ul>';
 } else {
 	$SocialCountMarkup	= '<ul class="socialcount" data-url="'.$pageUrl.'" data-share-text="'.$SocialCountText.'">
-	<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u='.$pageUrl.'" title="Share on Facebook"><span class="social-icon icon-facebook"></span><span class="count">Like</span></a></li>
-	<li class="twitter"><a href="https://twitter.com/intent/tweet?text='.$pageUrl.'" title="Share on Twitter"><span class="social-icon icon-twitter"></span><span class="count">Tweet</span></a></li>
-	<li class="googleplus"><a href="https://plus.google.com/share?url='.$pageUrl.'" title="Share on Google Plus"><span class="social-icon icon-googleplus"></span><span class="count">+1</span></a></li>
+	<li class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='.$pageUrl.'" title="Share on Facebook"><span class="social-icon icon-facebook"></span><span class="count">Like</span></a></li>
+	<li class="twitter"><a target="_blank" href="https://twitter.com/intent/tweet?text='.$pageUrl.'" title="Share on Twitter"><span class="social-icon icon-twitter"></span><span class="count">Tweet</span></a></li>
+	<li class="googleplus"><a target="_blank" href="https://plus.google.com/share?url='.$pageUrl.'" title="Share on Google Plus"><span class="social-icon icon-googleplus"></span><span class="count">+1</span></a></li>
 	</ul>';
 }
 
