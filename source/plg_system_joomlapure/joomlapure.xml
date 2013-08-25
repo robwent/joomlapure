@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>System - JoomlaPure</name>
+	<author>Robert Went</author>
+	<creationDate>July 2013</creationDate>
+	<copyright>Copyright (C) Robert Went, Inc. All rights reserved.</copyright>
+	<license>http://www.wtfpl.net/txt/copying/ WTFPL</license>
+	<authorEmail>i@robertwent.com</authorEmail>
+	<authorUrl>http://www.robertwent.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Joomlapure Template Framework</description>
+	<files>
+		<filename plugin="joomlapure">joomlapure.php</filename>
+		<folder>joomlapure</folder>
+		<filename>index.html</filename>
+	</files>
+	<!--<updateservers>
+		<server type="extension" priority="1" name="Joomlapure Template Framework">http://extensions.robertwent.com/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=1&amp;dummy=extension.xml</server>
+	</updateservers>-->
+</extension>

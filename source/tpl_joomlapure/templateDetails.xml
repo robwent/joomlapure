@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site" method="upgrade">
+<name>joomlapure</name>
+<version>1.0</version>
+<creationDate>22/06/2013</creationDate>
+<author>Robert Went</author>
+<authorEmail>i@robertwent.com</authorEmail>
+<copyright>Copyright (C) Robert Went, Inc. All rights reserved.</copyright>
+<description>TPL_JOOMLAPURE_XML_DESCRIPTION</description>
+<files>
+<filename>component.php</filename>
+<filename>error.php</filename>
+<filename>index.php</filename>
+<filename>index.html</filename>
+<filename>templateDetails.xml</filename>
+<filename>template_preview.png</filename>
+<filename>template_thumbnail.png</filename>
+<folder>css</folder>
+<folder>extras</folder>
+<folder>html</folder>
+<folder>images</folder>
+<folder>js</folder>
+<folder>language</folder>
+<folder>less</folder>
+<folder>pure</folder>
+<folder>sass</folder>
+</files>
+<positions>
+<position>404search</position>
+<position>menu</position>
+<position>splash</position>
+<position>breadcrumbs</position>
+<position>bottom</position>
+<position>footer</position>
+<position>debug</position>
+</positions>
+<languages folder="language">
+<language tag="en-GB">en-GB/en-GB.tpl_joomlapure.ini</language>
+<language tag="en-GB">en-GB/en-GB.tpl_joomlapure.sys.ini</language>
+</languages>
+<config>
+<fields name="params" addfieldpath="/templates/joomlapure/pure/fields">
+<fieldset name="basic">
+<field name="scriptselement" type="scripts" label="" description="" />
+<field name="sitename"
+class=""
+type="text"
+default=""
+label="TPL_JOOMLAPURE_SITENAME_LABEL"
+description="TPL_JOOMLAPURE_SITENAME_DESC" />
+<field name="hideHome"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_HIDEHOME_LABEL"
+description="TPL_JOOMLAPURE_HIDEHOME_DESC"
+>
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="googleFont"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_FONT_LABEL"
+description="TPL_JOOMLAPURE_FONT_DESC"
+>
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="googleFontLoader"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_FONTLOADER_LABEL"
+description="TPL_JOOMLAPURE_FONTLOADER_DESC"
+>
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="googleFontName"
+class=""
+type="text"
+default="Raleway:100"
+label="TPL_JOOMLAPURE_FONT_NAME_LABEL"
+description="TPL_JOOMLAPURE_FONT_NAME_DESC" />
+<field name="analyticsCode"
+class=""
+type="textarea"
+default=""
+label="TPL_JOOMLAPURE_ANALYTICS_LABEL"
+description="TPL_JOOMLAPURE_ANALYTICS_DESC" />
+</fieldset>
+<fieldset name="CORE_OUTPUT" label="TPL_JOOMLAPURE_COREOUTPUT_FIELDSET_LABEL">
+<field name="note1" type="note" class="alert alert-info" close="true" label="TPL_JOOMLAPURE_NOTE1_LABEL" description="TPL_JOOMLAPURE_NOTE1_DESC" />
+<field name="removeMootools"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVEMOOTOOLS_LABEL"
+description="TPL_JOOMLAPURE_REMOVEMOOTOOLS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeMootoolsMore"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVEMOOMORE_LABEL"
+description="TPL_JOOMLAPURE_REMOVEMOOMORE_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeCoreJs"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVECOREJS_LABEL"
+description="TPL_JOOMLAPURE_REMOVECOREJS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeCaption"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVECAPTION_LABEL"
+description="TPL_JOOMLAPURE_REMOVECAPTION_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeJquery"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVEJQUERY_LABEL"
+description="TPL_JOOMLAPURE_REMOVEJQUERY_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeNoconflict"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVENOCONFLICT_LABEL"
+description="TPL_JOOMLAPURE_REMOVENOCONFLICT_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeBootstrapTooltip"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVEBOOTSTRAPTOOLTIP_LABEL"
+description="TPL_JOOMLAPURE_REMOVEBOOTSTRAPTOOLTIP_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeBootstrapjs"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVEBOOTSTRAPJS_LABEL"
+description="TPL_JOOMLAPURE_REMOVEBOOTSTRAPJS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeCanonical"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVECANONICAL_LABEL"
+description="TPL_JOOMLAPURE_REMOVECANONICAL_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="removeArticleTags"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_REMOVEARTICLETAGS_LABEL"
+description="TPL_JOOMLAPURE_REMOVEARTICLETAGS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="generator"
+type="text" default=""
+label="TPL_JOOMLAPURE_GENERATOR_LABEL"
+description="TPL_JOOMLAPURE_GENERATOR_DESC"
+filter="string" />
+<field name="note2" type="note" class="alert alert-info" close="true" label="TPL_JOOMLAPURE_NOTE2_LABEL" description="TPL_JOOMLAPURE_NOTE2_DESC" />
+<field name="addJquery"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_ADDJQUERY_LABEL"
+description="TPL_JOOMLAPURE_ADDJQUERY_DESC" >
+<option value="0">JNO</option>
+<option value="bottom">TPL_JOOMLAPURE_BOTTOM</option>
+<option value="top">TPL_JOOMLAPURE_TOP</option>
+</field>
+<field name="jqueryVersion"
+type="text" default=""
+label="TPL_JOOMLAPURE_JQUERYVERSION_LABEL"
+description="TPL_JOOMLAPURE_JQUERYVERSION_DESC"
+filter="" />
+<field name="bottomScripts"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_BOTTOMSCRIPTS_LABEL"
+description="TPL_JOOMLAPURE_BOTTOMSCRIPTS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="addPlugins"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_ADDPLUGINS_LABEL"
+description="TPL_JOOMLAPURE_ADDPLUGINS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="addScripts"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_ADDSCRIPTS_LABEL"
+description="TPL_JOOMLAPURE_ADDSCRIPTS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+</fieldset>
+<fieldset name="framework" label="TPL_JOOMLAPURE_FRAMEWORK_FIELDSET_LABEL">
+<field name="note3" type="note" class="alert alert-info" close="true" label="TPL_JOOMLAPURE_NOTE3_LABEL" description="TPL_JOOMLAPURE_NOTE3_DESC" />
+<field name="frameworkCSS"
+type="radio"
+class="btn-group"
+default="custom"
+label="TPL_JOOMLAPURE_FMWRK_LABEL"
+description="TPL_JOOMLAPURE_FMWRK_DESC" >
+<option value="custom">TPL_JOOMLAPURE_FRAMEWORKCUSTOM</option>
+<option value="local">TPL_JOOMLAPURE_FRAMEWORKLOCAL</option>
+<option value="none">TPL_JOOMLAPURE_FRAMEWORKNONE</option>
+</field>
+<field name="printCSS"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_PRINTCSS_LABEL"
+description="TPL_JOOMLAPURE_PRINTCSS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+</fieldset>
+<fieldset name="cdnoptions" label="TPL_JOOMLAPURE_CSSOPTIONS_FIELDSET_LABEL">
+<field name="note4" type="note" class="alert alert-info" close="true" label="TPL_JOOMLAPURE_NOTE4_LABEL" description="TPL_JOOMLAPURE_NOTE4_DESC" />
+<field name="modBase"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODBASE_LABEL"
+description="TPL_JOOMLAPURE_MODBASE_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modButtons"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODBUT_LABEL"
+description="TPL_JOOMLAPURE_MODBUT_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modFormsNR"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODFORMNR_LABEL"
+description="TPL_JOOMLAPURE_MODFORMNR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modFormsR"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODFORMR_LABEL"
+description="TPL_JOOMLAPURE_MODFORMR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modGridsNR"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODGRIDNR_LABEL"
+description="TPL_JOOMLAPURE_MODGRIDNR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modGridsR"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODGRIDR_LABEL"
+description="TPL_JOOMLAPURE_MODGRIDR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modMenusNR"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODMENNR_LABEL"
+description="TPL_JOOMLAPURE_MODMENNR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modMenusR"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODMENR_LABEL"
+description="TPL_JOOMLAPURE_MODMENR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="modTables"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_MODTAB_LABEL"
+description="TPL_JOOMLAPURE_MODTAB_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<!-- add class="uneditable-input" below to disable editing the css-->
+<field name="loadCss"
+type="textarea"
+
+default=""
+label="TPL_JOOMLAPURE_LOADCSS_LABEL"
+description="TPL_JOOMLAPURE_LOADCSS_DESC"
+rows="5"
+cols="10"
+filter="raw" />
+</fieldset>
+<fieldset name="SOCIAL_SEO" label="TPL_JOOMLAPURE_SOCIALOPT_FIELDSET_LABEL">
+<field name="descriptionMax"
+type="text"
+default="160"
+label="TPL_JOOMLAPURE_MAXDESC_LABEL"
+description="TPL_JOOMLAPURE_MAXDESC_DESC"
+filter="integer" />
+<field name="openGraph"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_OPENGRAPH_LABEL"
+description="TPL_JOOMLAPURE_OPENGRAPH_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="ogAdmins"
+type="text"
+default=""
+label="TPL_JOOMLAPURE_OGADMIN_LABEL"
+description="TPL_JOOMLAPURE_OGADMIN_DESC"
+filter="string" />
+<field name="ogSitename"
+type="text"
+default="Pure SEO"
+label="TPL_JOOMLAPURE_OGSITENAME_LABEL"
+description="TPL_JOOMLAPURE_OGSITENAME_DESC"
+filter="string" />
+<field name="twitterTags"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_TWITCARD_LABEL"
+description="TPL_JOOMLAPURE_TWITCARD_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="twitterSite"
+type="text"
+default=""
+label="TPL_JOOMLAPURE_TWITSITE_LABEL"
+description="TPL_JOOMLAPURE_TWITSITE_DESC"
+filter="string" />
+<field name="defaultTCard"
+type="list"
+class=""
+default="summary"
+label="TPL_JOOMLAPURE_TWITDEF_LABEL"
+description="TPL_JOOMLAPURE_TWITDEF_DESC" >
+<option value="summary">summary</option>
+<option value="photo">photo</option>
+<option value="gallery">gallery</option>
+<!--<option value="player">player</option>-->
+</field>
+<field name="twittercreator"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_TWITCREATOR_LABEL"
+description="TPL_JOOMLAPURE_TWITCREATOR_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="twittercreatorDf"
+type="text"
+default=""
+label="TPL_JOOMLAPURE_TWITDFCREATOR_LABEL"
+description="TPL_JOOMLAPURE_TWITDFCREATOR_DESC"
+filter="string" />
+<field name="relAuthor"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_GAUTH_LABEL"
+description="TPL_JOOMLAPURE_GAUTH_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="relAuthorDirect"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_GAUTHDIRECT_LABEL"
+description="TPL_JOOMLAPURE_GAUTHDIRECT_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="publisher"
+type="text"
+default=""
+label="TPL_JOOMLAPURE_GPUB_LABEL"
+description="TPL_JOOMLAPURE_GPUB_DESC"
+filter="string" />
+</fieldset>
+<fieldset name="Socialcount Share" label="TPL_JOOMLAPURE_SOCIALCOUNT_FIELDSET_LABEL">
+<field name="SocialCount"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_SC_LABEL"
+description="TPL_JOOMLAPURE_SC_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="SocialCountJs"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_SCJS_LABEL"
+description="TPL_JOOMLAPURE_SCJS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="SocialCountCss"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_SCCSS_LABEL"
+description="TPL_JOOMLAPURE_SCCSS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="SocialCountIcons"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_SCICO_LABEL"
+description="TPL_JOOMLAPURE_SCICO_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="SocialCountPosition"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_SCPOS_LABEL"
+description="TPL_JOOMLAPURE_SCPOS_DESC" >
+<option value="1">TPL_JOOMLAPURE_TOP</option>
+<option value="2">TPL_JOOMLAPURE_BOTTOM</option>
+<option value="3">TPL_JOOMLAPURE_BOTH</option>
+</field>
+<field name="SocialCountSize"
+type="radio"
+class="btn-group"
+default="medium"
+label="TPL_JOOMLAPURE_SCSIZE_LABEL"
+description="TPL_JOOMLAPURE_SCSIZE_DESC" >
+<option value="small">TPL_JOOMLAPURE_SMALL</option>
+<option value="medium">TPL_JOOMLAPURE_MEDIUM</option>
+<option value="large">TPL_JOOMLAPURE_LARGE</option>
+</field>
+<field name="SocialCountText"
+type="text"
+class=""
+default="Great article!"
+label="TPL_JOOMLAPURE_SCTEXT_LABEL"
+description="TPL_JOOMLAPURE_SCTEXT_DESC" />
+<!--	<field name="SocialCountFacebook"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_SCFB_LABEL"
+description="TPL_JOOMLAPURE_SCFB_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="SocialCountTwitter"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_SCTW_LABEL"
+description="TPL_JOOMLAPURE_SCTW_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="SocialCountGoogle"
+type="radio"
+class="btn-group"
+default="1"
+label="TPL_JOOMLAPURE_SCGP_LABEL"
+description="TPL_JOOMLAPURE_SCGP_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field> -->
+</fieldset>
+<fieldset name="microdata" label="TPL_JOOMLAPURE_MICRODATA_FIELDSET_LABEL">
+<field name="microPublishing"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MICROPUB_LABEL"
+description="TPL_JOOMLAPURE_MICROPUB_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="microTitle"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MICROTITLE_LABEL"
+description="TPL_JOOMLAPURE_MICROTITLE_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="microBread"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MICROBREAD_LABEL"
+description="TPL_JOOMLAPURE_MICROBREAD_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="microFeaturedImage"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MICROIMAGES_LABEL"
+description="TPL_JOOMLAPURE_MICROIMAGES_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="microAuthor"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MICROAUTH_LABEL"
+description="TPL_JOOMLAPURE_MICROAUTH_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<!--<field name="microContactAddress"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MICROCONTACTADDRESS_LABEL"
+description="TPL_JOOMLAPURE_MICROCONTACTADDRESS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>-->
+<field name="waiAriaRoles"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_WAIARIA_LABEL"
+description="TPL_JOOMLAPURE_WAIARIA_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+</fieldset>
+<fieldset name="images" label="TPL_JOOMLAPURE_IMAGES_FIELDSET_LABEL">
+<!--<field name="imagecheckelement" type="imagecheck" label="" description="" /> checks for imagemagick-->
+<!--<field name="pathConvert"
+type="text"
+class=""
+default="/usr/bin/convert"
+label="TPL_JOOMLAPURE_PATHCONVERT_LABEL"
+description="TPL_JOOMLAPURE_PATHCONVERT_DESC" />-->
+<!--<field name="imageQuality"
+type="text"
+class=""
+default="80"
+label="TPL_JOOMLAPURE_IMAGEQUALITY_LABEL"
+description="TPL_JOOMLAPURE_IMAGEQUALITY_DESC" />-->
+<!--<field name="canvasColor"
+type="text"
+class=""
+default=""
+label="TPL_JOOMLAPURE_IMAGECANVASCOLOR_LABEL"
+description="TPL_JOOMLAPURE_IMAGECANVASCOLOR_DESC" />-->
+<field name="imageCacheTime"
+type="text"
+class=""
+default="0"
+label="TPL_JOOMLAPURE_IMAGECACHETIME_LABEL"
+description="TPL_JOOMLAPURE_IMAGECACHETIME_DESC" />
+<field name="imageUseFeatured"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGEUSEFEATURED_LABEL"
+description="TPL_JOOMLAPURE_IMAGEUSEFEATURED_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageLinkTeaser"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGELINKTEASER_LABEL"
+description="TPL_JOOMLAPURE_IMAGELINKTEASER_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageResizeContent"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERESIZECONTENT_LABEL"
+description="TPL_JOOMLAPURE_IMAGERESIZECONTENT_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageResizeSmush"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERESIZESMUSH_LABEL"
+description="TPL_JOOMLAPURE_IMAGERESIZESMUSH_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageResizeTeaser"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERESIZETEASER_LABEL"
+description="TPL_JOOMLAPURE_IMAGERESIZETEASER_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageCropTeaser"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERECROPTEASER_LABEL"
+description="TPL_JOOMLAPURE_IMAGERECROPTEASER_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageScaleTeaser"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERESCALETEASER_LABEL"
+description="TPL_JOOMLAPURE_IMAGERESCALETEASER_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageWidthTeaser"
+type="text"
+class=""
+default=""
+label="TPL_JOOMLAPURE_IMAGEWIDTHTEASER_LABEL"
+description="TPL_JOOMLAPURE_IMAGEWIDTHTEASER_DESC" />
+<field name="imageHeightTeaser"
+type="text"
+class=""
+default=""
+label="TPL_JOOMLAPURE_IMAGEHEIGHTTEASER_LABEL"
+description="TPL_JOOMLAPURE_IMAGEHEIGHTTEASER_DESC" />
+<field name="imageResizeMain"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERESIZEMAIN_LABEL"
+description="TPL_JOOMLAPURE_IMAGERESIZEMAIN_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageCropMain"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERECROPMAIN_LABEL"
+description="TPL_JOOMLAPURE_IMAGERECROPMAIN_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageScaleMain"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_IMAGERESCALEMAIN_LABEL"
+description="TPL_JOOMLAPURE_IMAGERESCALEMAIN_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="imageWidthMain"
+type="text"
+class=""
+default=""
+label="TPL_JOOMLAPURE_IMAGEWIDTHMAIN_LABEL"
+description="TPL_JOOMLAPURE_IMAGEWIDTHMAIN_DESC" />
+<field name="imageHeightMain"
+type="text"
+class=""
+default=""
+label="TPL_JOOMLAPURE_IMAGEHEIGHTMAIN_LABEL"
+description="TPL_JOOMLAPURE_IMAGEHEIGHTMAIN_DESC" />
+</fieldset>
+<fieldset name="mobiledetect" label="TPL_JOOMLAPURE_MOBILEDETECT_FIELDSET_LABEL">
+<!--<field name="mobiledetectelement" type="mobiledetect" label="" description="" />-->
+<field name="mobileMobileCss"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILEMOBILECSS_LABEL"
+description="TPL_JOOMLAPURE_MOBILEMOBILECSS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="mobileTabletCss"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILETABLETCSS_LABEL"
+description="TPL_JOOMLAPURE_MOBILETABLETCSS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<!--<field name="mobileRemoveWebfonts"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILEREMOVEWEBFONTS_LABEL"
+description="TPL_JOOMLAPURE_MOBILEREMOVEWEBFONTS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>-->
+<field name="mobileRemovePrint"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILEREMOVEPRINT_LABEL"
+description="TPL_JOOMLAPURE_MOBILEREMOVEPRINT_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="mobileRemoveComments"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILEREMOVECOMMENTS_LABEL"
+description="TPL_JOOMLAPURE_MOBILEREMOVECOMMENTS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="note5" type="note" class="alert alert-info" close="true" label="TPL_JOOMLAPURE_NOTE5_LABEL" description="TPL_JOOMLAPURE_NOTE5_DESC" />
+<field name="mobileRemoveBotJs"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILEREMOVEBOTJS_LABEL"
+description="TPL_JOOMLAPURE_MOBILEREMOVEBOTJS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="mobileRemoveBotCss"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_MOBILEREMOVEBOTCSS_LABEL"
+description="TPL_JOOMLAPURE_MOBILEREMOVEBOTCSS_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+</fieldset>
+<fieldset name="comments" label="TPL_JOOMLAPURE_COMMENTS_FIELDSET_LABEL">
+<field name="commentCode"
+type="textarea"
+label="TPL_JOOMLAPURE_COMMENTS_LABEL"
+description="TPL_JOOMLAPURE_COMMENTS_DESC"
+filter="raw"
+/>
+</fieldset>
+<fieldset name="cdn" label="TPL_JOOMLAPURE_CDN_FIELDSET_LABEL">
+<field name="cdnUrl"
+type="text"
+label="TPL_JOOMLAPURE_CDNURL_LABEL"
+description="TPL_JOOMLAPURE_CDNURL_DESC"
+/>
+<field name="cdnJavascript"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_CDNJAVASCRIPT_LABEL"
+description="TPL_JOOMLAPURE_CDNJAVASCRIPT_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="cdnFeaturedImages"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_CDNFEATUREDIMAGE_LABEL"
+description="TPL_JOOMLAPURE_CDNFEATUREDIMAGE_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="cdnContentImages"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_CDNCONTENTIMAGE_LABEL"
+description="TPL_JOOMLAPURE_CDNCONTENTIMAGE_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+</fieldset>
+<fieldset name="404" label="TPL_JOOMLAPURE_404_FIELDSET_LABEL">
+<field name="content404"
+type="editor"
+label="TPL_JOOMLAPURE_CONTENT404_LABEL"
+description="TPL_JOOMLAPURE_CONTENT404_DESC"
+filter="raw"
+/>
+<field name="email404"
+type="radio"
+class="btn-group"
+default="0"
+label="TPL_JOOMLAPURE_EMAIL404_LABEL"
+description="TPL_JOOMLAPURE_EMAIL404_DESC" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+<field name="email404recipient"
+type="email"
+label="TPL_JOOMLAPURE_RECIPIENT404_LABEL"
+description="TPL_JOOMLAPURE_RECIPIENT404_DESC"
+/>
+</fieldset>
+</fields>
+</config>
+</extension>

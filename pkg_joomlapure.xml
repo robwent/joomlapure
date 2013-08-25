@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.1" method="upgrade">
+    <name>Joomlapure Framework Package</name>
+    <packagename>Joomlapure</packagename>
+    <version>1.0.0</version>
+    <url>http://www.joomlapure.com</url>
+    <creationDate>August 2013</creationDate>
+    <copyright>Copyright (C) Robert Went, Inc. All rights reserved.</copyright>
+    <license>http://www.wtfpl.net/txt/copying/ WTFPL</license>
+    <authorEmail>i@robertwent.com</authorEmail>
+    <authorUrl>http://www.robertwent.com</authorUrl>
+    <author>Robert Went</author>
+    <packager>Joomlapure Framework</packager>
+    <packagerurl>http://www.joomlapure.com</packagerurl>
+    <description>
+	<![CDATA[
+	<div align="center">
+		<div class="alert alert-success" style="background-color:#DFF0D8;border-color:#D6E9C6;color: #468847;padding: 1px 0;">
+				<h4>A title</h4>
+		<p>Some text</p>
+		</div>
+     <style>table.adminform{width: 100%;}</style>
+	 </div>
+		]]>
+	</description>
+    <files folder="source">
+        <file type="plugin" id="plg_jp" group="system">plg_system_joomlapure</file>
+        <file type="template" id="tpl_jp" client="site">tpl_joomlapure</file>
+    </files>
+</extension>
