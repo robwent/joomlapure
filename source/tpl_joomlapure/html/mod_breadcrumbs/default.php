@@ -16,6 +16,7 @@ include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 if (!$removeBootstrapTooltip) {
 JHtml::_('bootstrap.tooltip');
 }
+$separator = ' >';
 ?>
 <nav>
 	<ul class="breadcrumb<?php echo $moduleclass_sfx; ?>">
