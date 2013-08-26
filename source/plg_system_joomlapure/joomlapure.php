@@ -135,7 +135,7 @@ class JoomlaPure
 
 	// start configuration........
 		$mode = (int) 0755;
-		$cacheRoot = JPATH_BASE.DS.'cache'.DS.$template;
+		$cacheRoot = JPATH_BASE.DS.'images'.DS.'cache'.DS.$template;
 		if (!is_dir($cacheRoot)) {
 			mkdir($cacheRoot);
 			chmod($cacheRoot, $mode);
