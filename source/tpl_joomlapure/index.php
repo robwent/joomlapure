@@ -32,10 +32,10 @@ include ('pure'.DS.'views'.DS.'main_index_include.php');
 	if (!(JoomlaPure::isBot() && $mobileRemoveBotCss)) {
 		if (JoomlaPure::isMobile() && !JoomlaPure::isTablet() && $mobileMobileCss) {
 		// Mobiledetect installed/enabled/selected, is a mobile -> load mobile.css ?>
-		<link rel="stylesheet" href="/pure-seo/templates/<?php echo $template; ?>/css/mobile.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/css/mobile.css" type="text/css" />
 		<?php } elseif (JoomlaPure::isTablet() && $mobileTabletCss) {
 		// Mobiledetect installed/enabled/selected, is a tablet -> load tablet.css ?>
-		<link rel="stylesheet" href="/pure-seo/templates/<?php echo $template; ?>/css/tablet.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/css/tablet.css" type="text/css" />
 		<?php } else {
 		echo $loadCss; // Loads selected stylesheets
 	}
@@ -44,10 +44,13 @@ include ('pure'.DS.'views'.DS.'main_index_include.php');
 if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	if ($addJquery == 'top' && $jqueryVersion) : ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
-	<script src="<?php echo $cdnUrl ?>/templates/<?php echo $template; ?>/js/noconflict.js"></script>
+	<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/noconflict.js"></script>
 	<?php endif;
 } ?>
 <jdoc:include type="head" />
+<?php if ($this->params->get('analyticsCode')) {
+	echo $this->params->get('analyticsCode');
+} ?>
 </head>
 <body class="csstype">
 	<!--start demo-->
@@ -125,7 +128,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 			<?php }
 		}
 	}
-	if (($bottomScripts && $bottomScripts!=null) || $this->params->get('analyticsCode') || ($this->params->get('googleFont') && $this->params->get('googleFontLoader'))) : ?>
+	if (($bottomScripts && $bottomScripts!=null) || ($this->params->get('googleFont') && $this->params->get('googleFontLoader'))) : ?>
 	<script type="text/javascript">
 	<?php endif;
 	if ($this->params->get('bottomScripts')) {
@@ -135,10 +138,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	if ($this->params->get('googleFont') && $this->params->get('googleFontName') && $this->params->get('googleFontLoader')): ?>
 		WebFontConfig={google:{families:["<?php echo $this->params->get('googleFontName'); ?>"]}};(function(){var e=document.createElement("script");e.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";e.type="text/javascript";e.async="true";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
 <?php endif;
-if ($this->params->get('analyticsCode')) {
-	echo $this->params->get('analyticsCode');
-}
-if (($bottomScripts && $bottomScripts!=null) || $this->params->get('analyticsCode') || ($this->params->get('googleFont') && $this->params->get('googleFontLoader'))) : ?>
+if (($bottomScripts && $bottomScripts!=null) || ($this->params->get('googleFont') && $this->params->get('googleFontLoader'))) : ?>
 	</script>
 <?php endif;
 }
