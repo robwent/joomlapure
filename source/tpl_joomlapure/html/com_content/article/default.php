@@ -41,7 +41,7 @@ if (!$removeCaption) {
 			echo $this->item->pagination;
 		}
 		?>
-		<?php if ($params->get('show_title') || $params->get('show_author')) : ?>
+		<?php if ($params->get('show_title')) : ?>
 		<header <?php if ($microdata = 1 && $microPublishing = 1)  echo 'itemscope itemtype="http://schema.org/Article"'; ?> class="page-header">
 			<<?php if (!$this->params->get('show_page_heading')) {echo 'h1'; }else {echo 'h2';} ?> <?php if ($microdata = 1 && $microPublishing = 1)  echo 'itemprop="name"'; ?>>
 			<?php if ($this->item->state == 0) : ?>
