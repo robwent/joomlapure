@@ -22,6 +22,47 @@ Options +FollowSymLinks
 
 RewriteEngine On
 
+# ----------------------------------------------------------------------
+# Suppress or force the "www." at the beginning of URLs
+# ----------------------------------------------------------------------
+
+# The same content should never be available under two different URLs - especially not with and
+# without "www." at the beginning, since this can cause SEO problems (duplicate content).
+# That's why you should choose one of the alternatives and redirect the other one.
+
+# By default option 1 (no "www.") is activated. Remember: Shorter URLs are sexier.
+# no-www.org/faq.php?q=class_b
+
+# If you rather want to use option 2, just comment out all option 1 lines
+# and uncomment option 2.
+# IMPORTANT: NEVER USE BOTH RULES AT THE SAME TIME!
+# ----------------------------------------------------------------------
+
+# Option 1:
+# Rewrite "www.example.com -> example.com" 
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+#<IfModule mod_rewrite.c>
+#  RewriteCond %{HTTPS} !=on
+#  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+#</IfModule>
+
+# ----------------------------------------------------------------------
+
+# Option 2:
+# To rewrite "example.com -> www.example.com" uncomment the following lines.
+# Be aware that the following rule might not be a good idea if you
+# use "real" subdomains for certain parts of your website.
+
+# <IfModule mod_rewrite.c>
+#   RewriteCond %{HTTPS} !=on
+#   RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
+#   RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# ----------------------------------------------------------------------
+
 ## Begin - Rewrite rules to block out some common exploits.
 # If you experience problems on your site block out the operations listed below
 # This attempts to block the most common type of exploit `attempts` to Joomla!
