@@ -135,18 +135,18 @@ class JoomlaPure
 
 	// start configuration........
 		$mode = (int) 0755;
-		$cacheRoot = JPATH_BASE.DS.'images'.DS.'cache'.DS.$template;
+		$cacheRoot = JPATH_BASE.DS.'images'.DS.'cache';
 		if (!is_dir($cacheRoot)) {
 			mkdir($cacheRoot);
 			chmod($cacheRoot, $mode);
 			touch($cacheRoot.'/index.html');
 		}
-		$cacheFolder = $cacheRoot.DS.'images/';
+		$cacheFolder = $cacheRoot.DS.'images'.DS;
 		if (!is_dir($cacheFolder)) {
 			mkdir($cacheFolder, $mode);
 			touch($cacheFolder.'index.html');
 		}
-		$remoteFolder = $cacheFolder.'remote/';
+		$remoteFolder = $cacheFolder.'remote'.DS;
 		if (!is_dir($remoteFolder)) {
 			mkdir($remoteFolder, $mode);
 			touch($remoteFolder.'index.html');
