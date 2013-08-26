@@ -40,8 +40,6 @@ RewriteEngine On
 
 # Option 1:
 # Rewrite "www.example.com -> example.com" 
-RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 #<IfModule mod_rewrite.c>
 #  RewriteCond %{HTTPS} !=on
 #  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
