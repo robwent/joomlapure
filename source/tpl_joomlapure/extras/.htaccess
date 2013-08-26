@@ -61,6 +61,20 @@ RewriteEngine On
 
 # ----------------------------------------------------------------------
 
+# ----------------------------------------------------------------------
+# Rewrite a component sitemap to /sitemap.xml
+# ----------------------------------------------------------------------
+
+# The following example is for the default xmap sitemap
+# Change the second line to your actual sitemap url
+# After checking it is working, it is good practice to add it to the 
+# robots.txt file
+
+#RewriteCond %{REQUEST_URI} ^/sitemap.xml
+#RewriteRule .* /index.php?option=com_xmap&view=xml&tmpl=component&id=1
+
+# ----------------------------------------------------------------------
+
 ## Begin - Rewrite rules to block out some common exploits.
 # If you experience problems on your site block out the operations listed below
 # This attempts to block the most common type of exploit `attempts` to Joomla!
