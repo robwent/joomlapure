@@ -25,6 +25,6 @@ Documentation and demo available at [joomlapure.com](http://joomlapure.com).
 
 All of my best practices put into one starter template for developers.
 
-Out of the box the template can achieve 100% on Google's pagespeed analysis, dropping to 98% if adding images with no dimensions, and also dropping a percent or two if you add Google's own services like webfonts and analytics.
+Out of the box the template can achieve 100% on Google's pagespeed analysis, dropping to 98% if adding images with no dimensions (which can be automatically optimized), and also dropping a percent or two if you add Google's own services like webfonts and analytics.
 
 Still in very early stages but stable enough to build a site out of!
