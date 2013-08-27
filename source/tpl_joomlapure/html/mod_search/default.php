@@ -14,7 +14,7 @@ include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 
 ?>
 <div class="search<?php echo $moduleclass_sfx ?>">
-	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline" <?php if ($waiAriaRoles) echo 'role="form"'; ?>>
+	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="pure-form" <?php if ($waiAriaRoles) echo 'role="form"'; ?>>
 		<?php
 		if ($waiAriaRoles) echo '<div role="search">';
 		$output = '<label for="mod-search-searchword" class="element-invisible">' . $label . '</label> <input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="text" size="' . $width . '" value="' . $text . '"  onblur="if (this.value==\'\') this.value=\'' . $text . '\';" onfocus="if (this.value==\'' . $text . '\') this.value=\'\';" />';
@@ -23,7 +23,7 @@ include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 			if ($imagebutton) :
 				$button = ' <input type="image" value="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
 			else :
-				$button = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
+				$button = ' <button class="pure-button pure-button-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
 			endif;
 			endif;
 
