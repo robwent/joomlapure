@@ -75,6 +75,17 @@ RewriteEngine On
 
 # ----------------------------------------------------------------------
 
+# ----------------------------------------------------------------------
+# Remove the duplicate page /home
+# ----------------------------------------------------------------------
+
+# Leave your default menu item alias as home and change the following
+# url to that of your site
+
+#Redirect 301 /home http://www.yoursite.com
+
+# ----------------------------------------------------------------------
+
 ## Begin - Rewrite rules to block out some common exploits.
 # If you experience problems on your site block out the operations listed below
 # This attempts to block the most common type of exploit `attempts` to Joomla!
