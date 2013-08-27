@@ -20,3 +20,11 @@ Documentation and demo available at [joomlapure.com](http://joomlapure.com).
 - CDN options
 - Custom 404 editor with referer emil notifications
 - Bonus extras to speed up your site
+
+### Overview
+
+All of my best practices put into one starter template for developers.
+
+Out of the box the template can achieve 100% on Google's pagespeed analysis, dropping to 98% if adding images with no dimensions, and also dropping a percent or two if you add Google's own services like webfonts and analytics.
+
+Still in very early stages but stable enough to build a site out of!
