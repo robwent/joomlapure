@@ -1,12 +1,12 @@
 ![JoomlaPure](https://s3-eu-west-1.amazonaws.com/joomlapure/images/joomlapure.png)
 
-# An advanced (very beta!) starter template for Joomla3.1
+## An advanced (very beta!) starter template for Joomla3.1
 
 JoomlaPure is based on the [Pure framework](http://purecss.io/) from Yahoo. A fully featured tiny css framework.
 
 Documentation and demo available at [joomlapure.com](http://joomlapure.com).
 
-## Main Features
+### Main Features
 
 - Strip core Joomla output
 - Pick and choose css modules to load
