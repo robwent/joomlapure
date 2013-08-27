@@ -23,7 +23,7 @@ if (isset($this->error)) : ?>
 	</div>
 <?php endif; ?>
 
-<div class="contact-form">
+<div class="pure-form">
 	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal" <?php if ($waiAriaRoles) echo 'role="form"'; ?>>
 		<fieldset>
 			<legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
@@ -72,7 +72,7 @@ if (isset($this->error)) : ?>
 					<?php endforeach;?>
 				<?php endif ?>
 			<?php endforeach;?>
-			<div class="form-actions"><button class="btn btn-primary validate" type="submit"><?php echo JText::_('COM_CONTACT_CONTACT_SEND'); ?></button>
+			<div class="form-actions"><button class="pure-button pure-button-primary validate" type="submit"><?php echo JText::_('COM_CONTACT_CONTACT_SEND'); ?></button>
 				<input type="hidden" name="option" value="com_contact" />
 				<input type="hidden" name="task" value="contact.submit" />
 				<input type="hidden" name="return" value="<?php echo $this->return_page;?>" />
