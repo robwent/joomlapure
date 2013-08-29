@@ -8,7 +8,7 @@
  */
 
 defined('_JEXEC') or die;
-
+include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 if (!$removeCaption) {
 JHtml::_('behavior.caption');
