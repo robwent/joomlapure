@@ -17,7 +17,7 @@ $pageUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; // The curre
 
 $sitename = $params->get('sitename', $siteTitle);
 $hideHome = $params->get('hideHome', 0);
-$frameworkCSS = $params->get('frameworkCSS', 'custom');
+$frameworkCSS = $params->get('frameworkCSS', 'local');
 $printCSS = $params->get('printCSS', 0);
 
 $modBase = $params->get('modBase', 0);
