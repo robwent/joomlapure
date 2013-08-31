@@ -4,7 +4,7 @@
 
 JoomlaPure is based on the [Pure framework](http://purecss.io/) from Yahoo. A fully featured tiny css framework.
 
-Documentation and demo available at <a href="http://joomlapure.com" target="_blank">http://joomlapure.com</a>
+Documentation and demo available at [joomlapure.com](http://joomlapure.com).
 
 ### Main Features
 
