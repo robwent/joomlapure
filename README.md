@@ -30,3 +30,9 @@ Out of the box the template can achieve 100% on Google's pagespeed analysis, dro
 Still in very early stages but stable enough to build a site out of!
 
 Don't forget to publish the system plugin, there is currently no warning if it is disabled and the template won't work without it.
+
+### Installation
+
+The package installs a system plugin and the blank template.
+
+There are currently no warnings about the plugin being disabled, so if you get a white screen after installing, make sure the plugin is enabled.
