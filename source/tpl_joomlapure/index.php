@@ -63,7 +63,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 			<?php if ($this->countModules('menu')) : ?>
 			<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal" <?php if ($waiAriaRoles) echo 'role="navigation"'; ?>>
 				<a href="<?php echo $this->baseurl; ?>" title="<?php echo $sitename; ?>" class="brand-link"><span class="brand-title" <?php if ($waiAriaRoles) echo 'role="banner"'; ?>><?php echo $sitename; ?></span></a>
-				<jdoc:include type="modules" name="menu" style="pureseo" />
+				<jdoc:include type="modules" name="menu" style="puredefault" />
 			</div>
 		<?php endif; ?>
 	</header>
