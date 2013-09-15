@@ -45,7 +45,7 @@ class JFormFieldScripts extends JFormField
 
 			//default links
 			var style = '<link rel="stylesheet" href="<?php echo JURI::root(true) ; ?>/templates/<?php echo $template; ?>/css/style.css" type="text/css" />';
-			var local = '<link rel="stylesheet" href="/templates/<?php echo $template; ?>/css/pure-min.css" type="text/css" />';
+			var local = '<link rel="stylesheet" href="<?php echo JURI::root(true) ; ?>/templates/<?php echo $template; ?>/css/pure-min.css" type="text/css" />';
 			var cdn = '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css" type="text/css" />';
 
 			//check for button changes
