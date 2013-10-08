@@ -59,10 +59,7 @@ class JFormFieldScripts extends JFormField
 			//calculate which files should be loaded by the template
 			function calculateCdn() {
 				var i = 0;
-				var url = '';
-				if (jQuery('input[name="jform[params][modBase]"]:checked').val() == 1) {
-					url += 'pure/0.3.0/base-min.css&amp;'; i ++;
-				}
+				url = 'pure/0.3.0/base-min.css&amp;';
 				if (jQuery('input[name="jform[params][modButtons]"]:checked').val() == 1) {
 					url += 'pure/0.3.0/buttons-min.css&amp;'; i ++;
 				}
@@ -88,7 +85,7 @@ class JFormFieldScripts extends JFormField
 					url += 'pure/0.3.0/tables-min.css&amp;'; i ++;
 				}
 
-			if (i === 9) { //all selected so just load the full file
+			if (i === 8) { //all selected so just load the full file
 				jQuery('#jform_params_loadCss').text(cdn + style);
 			} else if (i === 0) { //none selected so just load style.css
 				jQuery('#jform_params_loadCss').text(style);
