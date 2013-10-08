@@ -29,7 +29,7 @@ if (!$removeCaption) {
 	JHtml::_('behavior.caption');
 }
 ?>
-<div class="item-page<?php echo $this->pageclass_sfx?>">
+<div class="pure-u item-page<?php echo $this->pageclass_sfx?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<section>
 		<header class="page-header">

@@ -14,7 +14,7 @@ if (!$removeCaption) {
 JHtml::_('behavior.caption');
 }
 ?>
-<div class="category-list<?php echo $this->pageclass_sfx;?>">
+<div class="pure-u category-list<?php echo $this->pageclass_sfx;?>">
 
 <?php
 $this->subtemplatename = 'articles';
