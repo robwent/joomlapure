@@ -46,7 +46,7 @@ class JFormFieldScripts extends JFormField
 			//default links
 			var style = '<link rel="stylesheet" href="<?php echo JURI::root(true) ; ?>/templates/<?php echo $template; ?>/css/style.css" type="text/css" />';
 			var local = '<link rel="stylesheet" href="<?php echo JURI::root(true) ; ?>/templates/<?php echo $template; ?>/css/pure-min.css" type="text/css" />';
-			var cdn = '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css" type="text/css" />';
+			var cdn = '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" type="text/css" />';
 
 			//check for button changes
 			jQuery('#jform_params_frameworkCSS0,#jform_params_modBase,#jform_params_modButtons,#jform_params_modFormsR,#jform_params_modFormsNR,#jform_params_modGridsR,#jform_params_modGridsNR,#collapse2 #jform_params_modMenusR,#jform_params_modMenusNR,#jform_params_modTables').click(calculateCdn);
@@ -61,31 +61,31 @@ class JFormFieldScripts extends JFormField
 				var i = 0;
 				var url = '';
 				if (jQuery('input[name="jform[params][modBase]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/base-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/base-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modButtons]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/buttons-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/buttons-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modFormsNR]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/forms-nr-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/forms-nr-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modFormsR]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/forms-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/forms-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modGridsNR]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/grids-nr-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/grids-nr-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modGridsR]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/grids-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/grids-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modMenusNR]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/menus-nr-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/menus-nr-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modMenusR]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/menus-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/menus-min.css&amp;'; i ++;
 				}
 				if (jQuery('input[name="jform[params][modTables]"]:checked').val() == 1) {
-					url += 'pure/0.2.1/tables-min.css&amp;'; i ++;
+					url += 'pure/0.3.0/tables-min.css&amp;'; i ++;
 				}
 
 			if (i === 9) { //all selected so just load the full file
