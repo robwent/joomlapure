@@ -56,7 +56,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
-<body class="csstype">
+<body>
 	<!--start demo-->
 	<div class="content pure-g-r"> <!--content-->
 		<header class="header pure-u-1">
