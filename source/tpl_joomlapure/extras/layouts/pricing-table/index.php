@@ -45,7 +45,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	if ($addJquery == 'top' && $jqueryVersion) : ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
 	<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/noconflict.js"></script>
-	<?php endif;
+<?php endif;
 } ?>
 <jdoc:include type="head" />
 <?php if ($this->params->get('analyticsCode')) {
@@ -60,105 +60,106 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 	<!--start demo-->
 
 
-<div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed" <?php if ($waiAriaRoles) echo 'role="navigation"'; ?>>
-    <a href="<?php echo $this->baseurl; ?>" title="<?php echo $sitename; ?>" class="pure-menu-heading"><span class="brand-title" <?php if ($waiAriaRoles) echo 'role="banner"'; ?>><?php echo $sitename; ?></span></a>
-    <jdoc:include type="modules" name="menu" style="puredefault" />
-</div>
+	<div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed" <?php if ($waiAriaRoles) echo 'role="navigation"'; ?>>
+		<a href="<?php echo $this->baseurl; ?>" title="<?php echo $sitename; ?>" class="pure-menu-heading"><span class="brand-title" <?php if ($waiAriaRoles) echo 'role="banner"'; ?>><?php echo $sitename; ?></span></a>
+		<jdoc:include type="modules" name="menu" style="puredefault" />
+	</div>
 
-<div class="banner">
-    <?php if ($this->countModules('banner')) : ?>
-            <jdoc:include type="modules" name="banner" style="pureraw" />
-<?php endif; ?>
-</div>
+	<div class="banner">
+		<?php if ($this->countModules('banner')) : ?>
+			<jdoc:include type="modules" name="banner" style="pureraw" />
+		<?php endif; ?>
+	</div>
 
-<div class="l-content">
-<?php if ($this->countModules('pricetable1 or pricetable2 or pricetable3')) : ?>
-	<?php $priceWidth = ($this->countModules('pricetable1') + $this->countModules('pricetable2') + $this->countModules('pricetable3')); 
-	if ($priceWidth == 1) {$priceWidth = '-1';} else {$priceWidth = '-1-'.$priceWidth;} ?>
-    <div class="pricing-tables pure-g-r">
-    <?php if ($this->countModules('pricetable1')) : ?>
-        <div class="pure-u<?php echo $priceWidth; ?>">
-            <div class="pricing-table pricing-table-free">
-                <jdoc:include type="modules" name="pricetable1" style="puredefault" />
-            </div>
-        </div>
-    <?php endif; ?>
+	<div class="l-content">
+		<?php if ($this->countModules('pricetable1 or pricetable2 or pricetable3')) : ?>
+			<?php $priceWidth = ($this->countModules('pricetable1') + $this->countModules('pricetable2') + $this->countModules('pricetable3')); 
+			if ($priceWidth == 1) {$priceWidth = '-1';} else {$priceWidth = '-1-'.$priceWidth;} ?>
+			<div class="pricing-tables pure-g-r">
+				<?php if ($this->countModules('pricetable1')) : ?>
+					<div class="pure-u<?php echo $priceWidth; ?>">
+						<div class="pricing-table pricing-table-free">
+							<jdoc:include type="modules" name="pricetable1" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
 
-    <?php if ($this->countModules('pricetable2')) : ?>
-        <div class="pure-u<?php echo $priceWidth; ?>">
-            <div class="pricing-table pricing-table-biz">
-                <jdoc:include type="modules" name="pricetable2" style="puredefault" />
-            </div>
-        </div>
-    <?php endif; ?>
+				<?php if ($this->countModules('pricetable2')) : ?>
+					<div class="pure-u<?php echo $priceWidth; ?>">
+						<div class="pricing-table pricing-table-biz">
+							<jdoc:include type="modules" name="pricetable2" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
 
-    <?php if ($this->countModules('pricetable3')) : ?>
-        <div class="pure-u<?php echo $priceWidth; ?>">
-            <div class="pricing-table pricing-table-enterprise">
-                <jdoc:include type="modules" name="pricetable3" style="puredefault" />
-            </div>
-        </div>
-    <?php endif; ?>
-    </div> <!-- end pricing-tables -->
-    <?php endif; ?>
+				<?php if ($this->countModules('pricetable3')) : ?>
+					<div class="pure-u<?php echo $priceWidth; ?>">
+						<div class="pricing-table pricing-table-enterprise">
+							<jdoc:include type="modules" name="pricetable3" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
+			</div> <!-- end pricing-tables -->
+		<?php endif; ?>
 
-<?php if ($removeComponent != 1) : ?>
-    <div class="main pure-g-r" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
-	<jdoc:include type="message" />
-	<jdoc:include type="component" />
-</div>
-<?php endif; ?><!-- end main content -->
+		<?php if ($removeComponent != 1) : ?>
+			<div class="main pure-g-r" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
+				<jdoc:include type="message" />
+				<jdoc:include type="component" />
+			</div>
+		<?php endif; ?><!-- end main content -->
 
-    <?php if ($this->countModules('information1 or information2 or information3 or information4')) : ?>
-        <?php $info1Width = $this->countModules('information1 and information2') ? '-2' : '' ?>
-        <?php $info2Width = $this->countModules('information3 and information4') ? '-2' : '' ?>
-    <div class="information pure-g-r">
-    <?php if ($this->countModules('information1')) : ?>
-        <div class="pure-u-1<?php echo $info1Width; ?>">
-            <div class="l-box">
-                <jdoc:include type="modules" name="information1" style="puredefault" />
-            </div>
-        </div>
-         <?php endif; ?>
-         <?php if ($this->countModules('information2')) : ?>
-        <div class="pure-u-1<?php echo $info1Width; ?>">
-            <div class="l-box">
-                <jdoc:include type="modules" name="information2" style="puredefault" />
-            </div>
-        </div>
-         <?php endif; ?>
-         <?php if ($this->countModules('information3')) : ?>
-        <div class="pure-u-1<?php echo $info2Width; ?>">
-            <div class="l-box">
-                <jdoc:include type="modules" name="information3" style="puredefault" />
-            </div>
-        </div>
-         <?php endif; ?>
-         <?php if ($this->countModules('information4')) : ?>
-        <div class="pure-u-1<?php echo $info2Width; ?>">
-            <div class="l-box">
-                <jdoc:include type="modules" name="information4" style="puredefault" />
-            </div>
-        </div>
-         <?php endif; ?>
-    </div> <!-- end information -->
-    <?php endif; ?>
-   
-</div> <!-- end l-content -->
+		<?php if ($this->countModules('information1 or information2 or information3 or information4')) : ?>
+			<?php $info1Width = $this->countModules('information1 and information2') ? '-2' : '' ?>
+			<?php $info2Width = $this->countModules('information3 and information4') ? '-2' : '' ?>
+			<div class="information pure-g-r">
+				<?php if ($this->countModules('information1')) : ?>
+					<div class="pure-u-1<?php echo $info1Width; ?>">
+						<div class="l-box">
+							<jdoc:include type="modules" name="information1" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
+				<?php if ($this->countModules('information2')) : ?>
+					<div class="pure-u-1<?php echo $info1Width; ?>">
+						<div class="l-box">
+							<jdoc:include type="modules" name="information2" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
+				<?php if ($this->countModules('information3')) : ?>
+					<div class="pure-u-1<?php echo $info2Width; ?>">
+						<div class="l-box">
+							<jdoc:include type="modules" name="information3" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
+				<?php if ($this->countModules('information4')) : ?>
+					<div class="pure-u-1<?php echo $info2Width; ?>">
+						<div class="l-box">
+							<jdoc:include type="modules" name="information4" style="puredefault" />
+						</div>
+					</div>
+				<?php endif; ?>
+			</div> <!-- end information -->
+		<?php endif; ?>
+		
+	</div> <!-- end l-content -->
 
-<footer class="footer">
-    <jdoc:include type="modules" name="footer" style="puredefault" />
-</footer>
+	<?php if ($this->countModules('footer')) : ?>
+		<footer class="footer">
+			<jdoc:include type="modules" name="footer" style="puredefault" />
+		</footer>
+	<?php endif; ?>
+	<!--end demo-->
 
-<!--end demo-->
 
-
-<?php
-if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
-	if ($addJquery == 'bottom' && $jqueryVersion) : ?>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
-	<!--<script type="text/javascript">jQuery.noConflict();</script>-->
-	<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/noconflict.js"></script>
+	<?php
+	if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
+		if ($addJquery == 'bottom' && $jqueryVersion) : ?>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo $jqueryVersion; ?>/jquery.min.js"></script>
+		<!--<script type="text/javascript">jQuery.noConflict();</script>-->
+		<script src="<?php echo JURI::root(true) ?>/templates/<?php echo $template; ?>/js/noconflict.js"></script>
 	<?php endif;
 	if ($addPlugins) {
 		if ($cdnUrl && $cdnJavascript) { ?>
@@ -195,7 +196,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 		WebFontConfig={google:{families:["<?php echo $this->params->get('googleFontName'); ?>"]}};(function(){var e=document.createElement("script");e.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";e.type="text/javascript";e.async="true";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
 <?php endif;
 if (($bottomScripts && $bottomScripts!=null) || ($this->params->get('googleFont') && $this->params->get('googleFontLoader'))) : ?>
-	</script>
+</script>
 <?php endif;
 }
 if (!(JoomlaPure::isBot() || JoomlaPure::isMobile() || JoomlaPure::isTablet() )) {?>
