@@ -14,7 +14,7 @@ $template = $app->getTemplate();
 include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 ?>
 <?php $images = json_decode($displayData->images); ?>
-<?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
+<?php if ((isset($images->image_intro) && !empty($images->image_intro)) || ($imageUseFeatured && (isset($images->image_fulltext) && !empty($images->image_fulltext))) ) : ?>
 	<?php $imgfloat = (empty($images->float_intro)) ? $displayData->params->get('float_intro') : $images->float_intro; ?>
 	<div class="pull-<?php echo htmlspecialchars($imgfloat); ?> item-image"> <img
 		<?php if ($images->image_intro_caption):
@@ -37,6 +37,8 @@ include (JPATH_BASE.DS.'templates'.DS.$template.DS.'pure'.DS.'config.php');
 				$original = $images->image_intro;
 				$images->image_intro = JoomlaPure::resize($images->image_intro,$settings);
 			}
+		} elseif ($imageUseFeatured) {
+			$images->image_intro = $images->image_fulltext;
 		} ?>
 		src="<?php if ($cdnUrl && $cdnFeaturedImages) {echo $cdnUrl.'/'.ltrim(htmlspecialchars($images->image_intro), '/');} else echo htmlspecialchars($images->image_intro); ?>" <?php if ($imageResizeTeaser && $original) echo 'data-original="'.$original.'"'; ?> alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>"/> </div>
 	<?php endif; ?>
