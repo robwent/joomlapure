@@ -89,6 +89,7 @@ description="TPL_JOOMLAPURE_FONT_NAME_DESC" />
 class=""
 type="textarea"
 default=""
+filter="raw"
 label="TPL_JOOMLAPURE_ANALYTICS_LABEL"
 description="TPL_JOOMLAPURE_ANALYTICS_DESC" />
 </fieldset>
