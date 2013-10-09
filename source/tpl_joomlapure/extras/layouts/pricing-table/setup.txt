@@ -1,0 +1,49 @@
+MODULE POSITIONS
+Menu
+Banner
+pricetable1
+pricetable2
+pricetable3
+information1
+information2
+information3
+information4
+footer
+
+DEMO CUSTOM HTML CONTENT
+
+Banner:
+
+<h1 class="banner-head">
+        Simple Pricing.<br>
+        Try before you buy.
+</h1>
+
+/*----------------------------------------------------------------------------*/    
+Pricing Tables Example:
+
+<div class="pricing-table-header">
+                    <h2>Personal</h2>
+
+                    <span class="pricing-table-price">
+                        $5 <span>per month</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Free setup</li>
+                    <li>Custom sub-domain</li>
+                    <li>Standard customer support</li>
+                    <li>1GB file storage</li>
+                    <li>1 database</li>
+                    <li>Unlimited bandwidth</li>
+                </ul>
+
+                <button class="pure-button button-choose">Choose</button>
+
+/*----------------------------------------------------------------------------*/                
+Footer:
+
+<p class="l-box">
+        <a href="#">Try now</a> for 14 days. No credit card required. Header image courtesy of <a href='http://unsplash.com/'>Unsplash</a>.
+    </p>                    
