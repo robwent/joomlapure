@@ -37,15 +37,15 @@ class plgSystemJoomlapure extends JPlugin
 		if (!defined('DS')) {
 			define('DS', DIRECTORY_SEPARATOR);
 		}
-		$this->_mainframe= JFactory::getApplication();
-		$this->_template = $this->_mainframe->getTemplate();
-		$pureTemplate = file_exists(JPATH_SITE.DS.'templates'.DS.$this->_template.DS.'pure'.DS.'config.php') ? true : false;
+	//	$this->_mainframe= JFactory::getApplication();
+	//	$this->_template = $this->_mainframe->getTemplate();
+	//	$pureTemplate = file_exists(JPATH_SITE.DS.'templates'.DS.$this->_template.DS.'pure'.DS.'config.php') ? true : false;
 
-		if(!($pureTemplate)) return;
+	//	if(!($pureTemplate)) return;
 
 		require_once 'joomlapure/classes/images/SmushIt.class.php';
 		require_once 'joomlapure/classes/mobiledetect/Mobile_Detect.php';
-		return true;
+	//	return true;
 	}
 
 }
