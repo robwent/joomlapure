@@ -67,7 +67,7 @@ if (!(JoomlaPure::isBot() && $mobileRemoveBotJs)) {
 
 	<div class="banner">
 		<?php if ($this->countModules('banner')) : ?>
-			<jdoc:include type="modules" name="banner" style="pureraw" />
+			<jdoc:include type="modules" name="banner" style="puredefault" />
 		<?php endif; ?>
 	</div>
 
