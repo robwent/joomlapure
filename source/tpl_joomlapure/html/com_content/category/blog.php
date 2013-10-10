@@ -20,7 +20,7 @@ if (!$removeCaption) {
 	JHtml::_('behavior.caption');
 }
 ?>
-<section class="pure-u blog<?php echo $this->pageclass_sfx;?>">
+<section class="pure-u-1 blog<?php echo $this->pageclass_sfx;?>">
 	<header class="page-header">
 		<?php if ($this->params->get('show_page_heading', 1)) : ?>
 		<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>

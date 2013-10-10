@@ -16,28 +16,6 @@ body .primary-button{background:#02a6eb;color:#fff;}
 .ribbon h2{display:inline;font-weight:400;}
 .footer{background:#111;color:#aaa;text-align:center;font-size:80%;padding:1em;}
 
-/*button sizes*/
-.pure-button-rounded {
-	-webkit-border-radius: 4px;
-    moz-border-radius: 4px;
-    border-radius: 4px;
-}
-.pure-button-xsmall {
-    font-size: 70%;
-}
-
-.pure-button-small {
-    font-size: 85%;
-}
-
-.pure-button-large {
-    font-size: 110%;
-}
-
-.pure-button-xlarge {
-    font-size: 125%;
-}
-
 /*bootstrap stuff*/
 .pull-left {
     float:left;

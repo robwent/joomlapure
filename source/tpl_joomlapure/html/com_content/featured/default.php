@@ -22,7 +22,7 @@ if (!$removeCaption) {
 // If the page class is defined, add to class as suffix.
 // It will be a separate class if the user starts it with a space
 ?>
-<div class="pure-u blog-featured<?php echo $this->pageclass_sfx;?>">
+<div class="pure-u-1 blog-featured<?php echo $this->pageclass_sfx;?>">
 <?php if ($this->params->get('show_page_heading') != 0) : ?>
 <header class="page-header">
 	<h1>
