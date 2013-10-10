@@ -253,7 +253,7 @@ class JoomlaPure
     		}
     	}else{
     		$cmd = $path_to_convert." " . escapeshellarg($imagePath).
-    		" -thumbnail ".(!empty($w) ? 'x':'').$w." ".($opts['maxOnly'] == true ? "\>" : "")." -quality ".escapeshellarg($opts['quality'])." ".escapeshellarg($newPath);
+    		" -thumbnail ".(!empty($h) ? 'x':'').$w." ".($opts['maxOnly'] == true ? "\>" : "")." -quality ".escapeshellarg($opts['quality'])." ".escapeshellarg($newPath);
     	}
     	$c = exec($cmd, $output, $return_code);
     	if($return_code != 0) {
