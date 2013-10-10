@@ -37,7 +37,7 @@ $bscolumns = min($columns, floor(12 / $bsspans));
 $n = count($this->items);
 ?>
 
-<form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post" name="adminForm" id="adminForm" class="pure-form">
 	<?php if ($this->params->get('filter_field') != 'hide' || $this->params->get('show_pagination_limit')) : ?>
 	<fieldset class="filters btn-toolbar">
 		<?php if ($this->params->get('filter_field') !== '0') : ?>
