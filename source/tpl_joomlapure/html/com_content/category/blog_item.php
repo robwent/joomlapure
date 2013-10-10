@@ -84,7 +84,7 @@ $link = new JURI($link1);
 $link->setVar('return', base64_encode($returnURL));
 endif; ?>
 
-<p class="readmore"><a class="pure-button pure-button-primary pure-button-rounded" href="<?php echo $link; ?>"> <span class="icon-chevron-right"></span>
+<p class="readmore"><a class="pure-button pure-button-secondary pure-button-readmore pure-button-rounded" href="<?php echo $link; ?>"> <span class="icon-chevron-right"></span>
 
 	<?php if (!$params->get('access-view')) :
 	echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
