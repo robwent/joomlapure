@@ -371,7 +371,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 <?php endif; ?>
 <?php echo $this->item->event->afterDisplayContent; ?> </div>
 <?php if (!(JoomlaPure::isMobile() && !JoomlaPure::isTablet() && $mobileRemoveComments)) {
-	if($commentCode) {echo $commentCode;}
+	if($commentCode) {echo '<div class="pure-u-1">'.$commentCode.'</div>';}
 }
 ?>
 <?php if ($this->params->get('show_page_heading')) : ?>
