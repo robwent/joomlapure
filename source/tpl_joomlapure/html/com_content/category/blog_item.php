@@ -27,7 +27,7 @@ if (!$removeJquery) {
 	JHtml::_('behavior.framework');
 }
 ?>
-<article class="pure-u article">
+<article class="article">
 	<?php if ($this->item->state == 0) : ?>
 	<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
 <?php endif; ?>
