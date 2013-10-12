@@ -57,7 +57,7 @@ if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="language" content="<?php echo $this->language; ?>" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/error.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" type="text/css" />
 
 	<?php
 	$debug = JFactory::getConfig()->get('debug_lang');
@@ -77,8 +77,8 @@ if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient){
 		<header class="header pure-u-1">
 
 		</header>
-		<div class="content pure-u-1"> <!--main wrap-->
-			<div class="main pure-g-r content-ribbon" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
+		<div class="content pure-g-r"> <!--main wrap-->
+			<div class="main pure-u-1 content-ribbon" <?php if ($waiAriaRoles) echo 'role="main"'; ?>>
 				<?php echo $content404; ?>
 				<?php 
 				if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient && $send !== true) { //Let the visitor know if admin has been notified
@@ -88,6 +88,7 @@ if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient){
 				}
 				?>
 			</div>
+			<div class="main pure-u-1">
 			<?php
 			$this->searchmodules = JModuleHelper::getModules('404search');
 			foreach ($this->searchmodules as $searchmodule)
@@ -98,6 +99,7 @@ if (isset($_SERVER["HTTP_REFERER"]) && $email404 && $email404recipient){
 				echo $output;
 			}
 			?>
+			</div>
 		</div> <!--end main wrap-->
 	</div> <!--end content-->
 	<jdoc:include type="modules" name="debug" style="none" />
