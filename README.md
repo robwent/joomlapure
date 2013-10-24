@@ -18,7 +18,7 @@ Documentation and demo available at [joomlapure.com](http://joomlapure.com).
 - Device specific content with mobileDetect
 - 3rd party comments
 - CDN options
-- Custom 404 editor with referer emil notifications
+- Custom 404 editor with referer email notifications
 - Bonus extras to speed up your site
 
 ### Overview
