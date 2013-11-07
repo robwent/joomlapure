@@ -33,9 +33,9 @@ class JFormFieldScripts extends JFormField
 				var i = jQuery('input[name="jform[params][frameworkCSS]"]:checked').val();
 
 				if(i=='custom'){
-					jQuery('#collapse3').parent('div.accordion-group').show();
+					jQuery('a[href="#attrib-cdnoptions"]').show();
 				} else {
-					jQuery('#collapse3').parent('div.accordion-group').hide();
+					jQuery('a[href="#attrib-cdnoptions"]').hide();
 				}
 			}
 			//check on page load
