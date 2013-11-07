@@ -33,9 +33,9 @@ class JFormFieldScripts extends JFormField
 				var i = jQuery('input[name="jform[params][frameworkCSS]"]:checked').val();
 
 				if(i=='custom'){
-					jQuery('#collapse3').parent('div.accordion-group').show();
+					jQuery('a[href="#attrib-cdnoptions"]').show();
 				} else {
-					jQuery('#collapse3').parent('div.accordion-group').hide();
+					jQuery('a[href="#attrib-cdnoptions"]').hide();
 				}
 			}
 			//check on page load
@@ -49,7 +49,7 @@ class JFormFieldScripts extends JFormField
 			var cdn = '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" type="text/css" />';
 
 			//check for button changes
-			jQuery('#jform_params_frameworkCSS0,#jform_params_modBase,#jform_params_modButtons,#jform_params_modFormsR,#jform_params_modFormsNR,#jform_params_modGridsR,#jform_params_modGridsNR,#collapse2 #jform_params_modMenusR,#jform_params_modMenusNR,#jform_params_modTables').click(calculateCdn);
+			jQuery('#jform_params_frameworkCSS0,#jform_params_modBase,#jform_params_modButtons,#jform_params_modFormsR,#jform_params_modFormsNR,#jform_params_modGridsR,#jform_params_modGridsNR,#jform_params_modMenusR,#jform_params_modMenusNR,#jform_params_modTables').click(calculateCdn);
 			jQuery('#jform_params_frameworkCSS1').on("click", function(){
 				jQuery('#jform_params_loadCss').text(local);
 			});
