@@ -22,6 +22,7 @@ function modChrome_puredefault($module, &$params, &$attribs)
 	$desktopRemove = preg_match ('/desktop-remove/', $params->get('moduleclass_sfx'))?1:0;
 	$botRemove = preg_match ('/bot-remove/', $params->get('moduleclass_sfx'))?1:0;
 	$headerTag = $params->get('header_tag', 'h3');
+	$headerClass = $params->get('header_class', '');
 	if (JoomlaPure::isMobile() && !JoomlaPure::isTablet() && $mobileRemove) {
 		return null;
 	} elseif (JoomlaPure::isTablet() && $tabletRemove) {
@@ -33,7 +34,7 @@ function modChrome_puredefault($module, &$params, &$attribs)
 	} elseif ($module->content) { ?>
 		<?php if ($module->showtitle) : ?>
 		<div class="pure-module-title">
-			<<?php echo $headerTag; ?>><span><?php echo $module->title; ?></span></<?php echo $headerTag; ?>>
+			<<?php echo $headerTag; ?>><span<?php if ($headerClass) echo ' class="'.$headerClass.'"'; ?>><?php echo $module->title; ?></span></<?php echo $headerTag; ?>>
 		</div>
 	<?php endif; ?>
 	<?php echo $module->content; ?>
