@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  Templates.pureseo
+ * @subpackage  Templates.joomlapure
  *
  * @copyright   Copyright (C) Robert Went. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -36,6 +36,8 @@ if ($removeCoreJs == 1) {
 }
 if ($removeJquery == 1) {
 	unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery.min.js']);
+	unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery-migrate.min.js']);
+  	unset($doc->_scripts[JURI::root(true) . '/media/system/js/tabs-state.js']);
 }
 if ($removeNoconflict == 1) {
 	unset($doc->_scripts[JURI::root(true) . '/media/jui/js/jquery-noconflict.js']);
