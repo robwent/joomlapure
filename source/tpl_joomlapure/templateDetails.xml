@@ -435,7 +435,7 @@ label="TPL_JOOMLAPURE_GPUB_LABEL"
 description="TPL_JOOMLAPURE_GPUB_DESC"
 filter="string" />
 </fieldset>
-<fieldset name="Socialcount Share" label="TPL_JOOMLAPURE_SOCIALCOUNT_FIELDSET_LABEL">
+<fieldset name="Socialcount_Share" label="TPL_JOOMLAPURE_SOCIALCOUNT_FIELDSET_LABEL">
 <field name="SocialCount"
 type="radio"
 class="btn-group"
