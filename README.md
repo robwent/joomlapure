@@ -1,6 +1,7 @@
 ![JoomlaPure](https://s3-eu-west-1.amazonaws.com/joomlapure/images/joomlapure.png)
 
-| **WARNING:** The pure css framework is no longer supported by Yahoo and is not actively maintained. The smushit API has also been closed down so automatic image resizing will not work. You may want to look for a starter template based on a more recent CSS framework like Bootstrap
+| **WARNING:** The pure css framework is no longer supported by Yahoo and is not actively maintained. The smushit API has also been closed down so automatic image resizing will not work. You may want to look for a starter template based on a more recent CSS framework like Bootstrap |
+| --- |
 
 ## An advanced starter template for Joomla3.x
 
